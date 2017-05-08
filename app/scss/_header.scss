@@ -1,16 +1,23 @@
-body {
-	background-color: #f2f7f8; }
-
 header {
 	background-color: #fff;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	transition: all .4s;
+}
+
+.is-hidden {
+	top: -111px;
+	transition: all .4s;
 }
 
 header:after {
-content: ".";
-display: block;
-height: 0;
-clear: both;
-visibility: hidden; }
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden; 
+}
 
 
 header img {

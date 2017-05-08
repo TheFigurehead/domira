@@ -14,13 +14,29 @@
   box-sizing: border-box; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  background-color: #f2f7f8;
+  padding-top: 111px; }
 
-body {
-  background-color: #f2f7f8; }
+footer {
+  background-color: #fff;
+  width: 100%;
+  padding: 25px 0;
+  text-align: center;
+  color: #b2b8ba;
+  line-height: 20px;
+  font: 400 13px "ClearSans-Regular", sans-serif; }
 
 header {
-  background-color: #fff; }
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: all .4s; }
+
+.is-hidden {
+  top: -111px;
+  transition: all .4s; }
 
 header:after {
   content: ".";
