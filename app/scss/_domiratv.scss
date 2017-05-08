@@ -1,0 +1,156 @@
+.domiratv-container{
+  margin: 0 auto;
+  width: 1024px;
+}
+
+.movie-media-block{
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap-reverse;
+  flex: 1;
+}
+
+.movie-media-container{
+  position: fixed;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-left: -12px;
+}
+
+.movie-media-block-item{
+  position: relative;
+  flex: auto;
+  flex-grow: 2;
+  padding: 15px;
+  text-align: center;
+  width: 200px;
+  min-width: 330px;
+}
+
+.movie-media-video{
+  height: 82%;
+}
+
+.movie-media-block-item .thumbnail{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.movie-media-block-item iframe {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  height: calc(100% - 32px);
+
+}
+
+/*8*/
+.player{
+  height: calc(100% - 70px);
+  display: block;
+  position: absolute;
+  width: 94%;
+  left: 0;
+  top: 15px;
+  padding-left: 3%;
+}
+
+.player frame{
+  height: 100%;
+}
+
+
+#start_player1{
+  /*display: none;*/
+  position: absolute;
+  top: 74%;
+  left: 16%;
+  display: none;
+}
+
+.start-video{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.start-video-play {
+  position: absolute;
+  /*top: 80px;*/
+  padding: 12px;
+  /*left: 174px;*/
+  opacity: .3;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.start-video-play:hover
+{
+  opacity: 1;
+  -webkit-filter: brightness (1);
+}
+
+.thumbnail_container
+{
+  height: auto;
+  overflow: hidden;
+  background-color: #000;
+  position: relative;
+}
+
+img.thumbnail
+{
+  opacity: 0.5;
+}
+
+
+.movie-media-control {
+  width: 94%;
+  position: absolute;
+  height: 60%;
+  background-color: rgba(0, 148, 255, 0);
+  top: 6%;
+  display: none;
+}
+
+.movie-media-control-pause{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.movie-media-content-wraper{
+  position: relative;
+  text-align: left;
+  margin-top: 14px;
+}
+
+.movie-media-content-title{
+  font-size: 18px;
+  color: #323438;
+  width: 220px;
+  height: 16px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.movie-media-content-description{
+  margin-top: 12px;
+  height: 31px;
+  color: #5b5d62;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
