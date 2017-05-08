@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "ClearSans-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/ClearSans-Bold/ClearSans-Bold.eot") format("embedded-opentype"), url("../fonts/ClearSans-Bold/ClearSans-Bold.woff") format("woff"), url("../fonts/ClearSans-Bold/ClearSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ClearSans-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/ClearSans-Regular/ClearSans-Regular.eot") format("embedded-opentype"), url("../fonts/ClearSans-Regular/ClearSans-Regular.woff") format("woff"), url("../fonts/ClearSans-Regular/ClearSans-Regular.ttf") format("truetype");
+}
+
+* {
+	box-sizing: border-box; }
+
+body {
+	margin: 0; }
+
 @import "breadCrumbs";
 @import "footer";
 @import "header";
