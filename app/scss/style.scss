@@ -23,12 +23,6 @@ body {
   font-size: 14px;
 }
 
-// @import "mixins";
-// @import "color";
-// @import "variables";
-// @import "normalize";
-// @import "global";
-// @import "grid";
 @import "domiratv";
 @import "breadCrumbs";
 @import "pageTitle";
@@ -36,3 +30,4 @@ body {
 @import "header";
 @import "bootstrap";
 @import "newsDomira";
+@import "newsDetailsDomira";

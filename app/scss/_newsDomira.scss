@@ -7,15 +7,19 @@
 	color: #0080c6;
 	line-height: 21px;
 	font-size: 17px;
+	height: 50px;
+	display: block;
 }
 
-.container .grid_items .item .item_content_wrapper p {
+.container .grid_items .item .item_content_wrapper p,
+.container .main_content_details .text_content_details .page_text_content p {
 	color: #5b5d62;
 	line-height: 18px;
-	margin: 20px 0 23px;
+	margin: 0;
 }
 
-.container .grid_items .item .item_content_wrapper span {
+.container .grid_items .item .item_content_wrapper span,
+.container .main_content_details .text_content_details span {
 	color: #989b9c;
 	line-height: 40px;
 	font-size: 13px;
@@ -23,7 +27,8 @@
 	position: relative;
 }
 
-.container .grid_items .item .item_content_wrapper span:before {
+.container .grid_items .item .item_content_wrapper span:before,
+.container .main_content_details .text_content_details span:before {
 	content: "";
 	width: 10px;
 	height: 11px;
@@ -42,8 +47,8 @@
 	line-height: 20px;
 	font-size: 13px;
 	text-decoration: none;
-	width: 100%;
 	width: 104px;
+	height: auto;
 	border-radius: 17px;
 	background-color: #ffffff;
 	border: none;
@@ -52,6 +57,32 @@
 	padding: 10px 0;
 }
 
+.container .grid_items .item .item_content_wrapper:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden; 
+}
+
 .container .grid_items .item {
 	margin-top: 45px;
+}
+
+.container .grid_items .item .item_content_wrapper .box {
+  overflow: hidden;
+  height: 40px;
+  width: auto;
+}
+
+.container .grid_items .item .item_content_wrapper .box2 {
+	height: 60px;
+	margin: 20px 0 23px;
+}
+
+.container .grid_items .item .item_content_wrapper .box__in {
+  -webkit-column-width: auto;
+  -moz-column-width: auto;
+  column-width: auto;
+  height: 100%;
 }

@@ -1,4 +1,8 @@
 $(document).ready(function() {
+
+    /****************/
+    //Domira autoHideHeader
+    /***************/
 	var header = $('header');
 
 	var headerHeight = $(header).height(),
@@ -31,7 +35,9 @@ $(document).ready(function() {
 			(!window.requestAnimationFrame) ? setTimeout(autoHideHeader, 250) : requestAnimationFrame(autoHideHeader);
 		}
 	})
-
+    /****************/
+    //End Domira autoHideHeader
+    /***************/
     /****************/
     //DomiraTV Engine
     /***************/
