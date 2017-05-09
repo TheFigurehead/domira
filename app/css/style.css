@@ -830,7 +830,7 @@ header .drop:hover .hidden {
 
 .container .gridItems .item .item_image_wrapper img {
   max-width: 360px;
-  max-height: 180px; }
+  background-size: cover; }
 
 .container .grid_items .item .item_content_wrapper a {
   color: #0080c6;
@@ -936,3 +936,16 @@ header .drop:hover .hidden {
   padding-bottom: 100px;
   border-bottom: 2px solid #fff;
   margin-bottom: 55px; }
+
+.container .grid_items .item .favorites_item_content_wrapper h5 {
+  font-size: 18px;
+  line-height: 21px;
+  color: #323438;
+  margin: 28px 0 12px; }
+
+.container .grid_items .item .favorites_item_content_wrapper h5 span {
+  color: #b6bac1; }
+
+.container .grid_items .item .favorites_item_content_wrapper .box p {
+  color: #5b5d62;
+  line-height: 18px; }
