@@ -19,11 +19,20 @@ body {
 	margin: 0; 
   background-color: #f2f7f8; 
   padding-top: 111px; 
+  font-family: "ClearSans-Regular", sans-serif;
+  font-size: 14px;
 }
 
-
+// @import "mixins";
+// @import "color";
+// @import "variables";
+// @import "normalize";
+// @import "global";
+// @import "grid";
 @import "domiratv";
 @import "breadCrumbs";
 @import "pageTitle";
 @import "footer";
 @import "header";
+@import "bootstrap";
+@import "newsDomira";
