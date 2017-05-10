@@ -21,6 +21,11 @@ body {
   padding-top: 111px; 
   font-family: "ClearSans-Regular", sans-serif;
   font-size: 14px;
+  position: relative;
+}
+
+main {
+  width: 100%;
 }
 
 @import "domiratv";
@@ -32,3 +37,4 @@ body {
 @import "newsDomira";
 @import "newsDetailsDomira";
 @import "favoritesDomira";
+@import "aboutDomira";

@@ -1,0 +1,32 @@
+.container .main_content_text .text_content {
+	padding-right: 70px;
+}
+
+.container .main_content_text .text_content .page_text_content {
+	padding-bottom: 70px;
+	border-bottom: 2px solid #ffffff;
+}
+
+.container .main_content_text .text_content2 .page_text_content {
+	padding-bottom: 0;
+	border-bottom: none;
+}
+
+.container .main_content_text .text_content2 {
+	padding-top: 65px;
+}
+
+.page_text .main_content_img {
+	height: 100%;
+	width: 50%;
+	background-image: url(../img/pexels-photo1.png);
+	position: fixed;
+	top: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: cover;
+}
+
+
+
