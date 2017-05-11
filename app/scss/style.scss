@@ -21,6 +21,16 @@ body {
   padding-top: 111px;
 }
 
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
 
 @import "domiratv";
 @import "breadCrumbs";
@@ -29,3 +39,4 @@ body {
 @import "header";
 @import "map";
 @import "top-main";
+@import "newsAndSales";
