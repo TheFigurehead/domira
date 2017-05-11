@@ -1,0 +1,62 @@
+.main-bottom-map-wrapper{
+  position: relative;
+  .main-bottom-map{
+    height: 500px;
+  }
+  .main-bottom-map-info-block{
+    //block appearence
+    border-radius: 2px;
+    background-color: rgba(0, 128, 198, 0.95);
+    padding: 45px 175px 45px 45px;
+    color: #fff;
+    // block positioning
+    position: absolute;
+    top:50%;
+    right: 15%;
+    transform: translateY(-50%);
+    // text formatting
+    font: 700 15px "ClearSans-Regular", sans-serif;
+    line-height: 21px;
+    .main-bottom-map-info-block-title h2{
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 0 0 25px 0;
+    }
+    .main-bottom-map-info-block-content h3{
+      color: #bbdbec;
+      font-size: 15px;
+      font-weight: 400;
+    }
+    .main-bottom-map-info-block-content .main-bottom-map-info-block-content-number{
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 700;
+    }
+    .main-bottom-map-info-block-content .main-bottom-map-info-block-content-email{
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+    .main-bottom-map-social-block{
+      position: absolute;
+      bottom: 35px;
+      right: 50px;
+      text-align: center;
+      ul{
+        padding: 0;
+        margin: 0;
+        li{
+          list-style-type: none;
+          padding: 10px 0;
+        }
+        // li:first-child{
+        //   padding-top: 0;
+        // }
+        // li:last-child{
+        //   padding-bottom: 0;
+        // }
+      }
+    }
+  }
+}
