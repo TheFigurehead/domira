@@ -27,10 +27,62 @@
 		</ul>
 	</header>
 	<main id="main">
-	<div class="main-bottom-map-wrapper">
-		<div class="main-bottom-map" id="bottom_map">
-
+	<div class="top-main-block">
+		<div class="banner-container">
+			<div class="banner-container-half">
+				<div class="main-map-top-wrapper">
+					<div class="main-map-top-block" id="main-top-map"></div>
+				</div>
+			</div>
+			<div class="banner-container-half">
+				<div class="jk-list">
+					<div class="jk-list-item">
+						<div class="jk-list-item-content">
+							<div class="jk-list-item-title">
+								<h2>ЖК«7'Я» в Счастливом</h2>
+								<div class="jk-list-item-title-flag">Восток</div>
+							</div>
+							<div class="jk-list-item-text">
+								Квартира в пригороде это идеальное место, где можно отдохнуть от городской суеты и востановить силы.
+							</div>
+						</div>
+						<img src="img/jk1.jpg" alt="Жилой комплекс">
+					</div>
+					<div class="jk-list-item">
+						<div class="jk-list-item-content">
+							<div class="jk-list-item-title">
+								<h2>ЖК«7'Я» в Счастливом</h2>
+								<div class="jk-list-item-title-flag">Запад</div>
+							</div>
+							<div class="jk-list-item-text">
+								Квартира в пригороде это идеальное место, где можно отдохнуть от городской суеты и востановить силы.
+							</div>
+						</div>
+						<img src="img/jk2.jpg" alt="Жилой комплекс">
+					</div>
+					<div class="jk-list-item">
+						<div class="jk-list-item-content">
+							<div class="jk-list-item-title">
+								<div class="jk-list-item-title-flag">Восток</div>
+								<h2>ЖК«7'Я» в Счастливом</h2>
+							</div>
+							<div class="jk-list-item-text">
+								Квартира в пригороде это идеальное место, где можно отдохнуть от городской суеты и востановить силы.
+							</div>
+						</div>
+						<img src="img/jk3.jpg" alt="Жилой комплекс">
+					</div>
+					<div class="jk-list-nav">
+						<div class="jk-list-nav-item up"></div>
+						<div class="jk-list-nav-item down"></div>
+					</div>
+				</div>
+			</div>
 		</div>
+	</div>
+	
+	<div class="main-bottom-map-wrapper">
+		<div class="main-bottom-map" id="bottom_map"></div>
 		<div class="main-bottom-map-info-block">
 			<div class="main-bottom-map-info-block-title">
 				<h2>Контакты</h2>
@@ -61,9 +113,6 @@
 		</div>
 	</div>
 	</main>
-	<footer>
-		<span>© 2016, Domira Development</span>
-	</footer>
 	<script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -76,7 +125,14 @@
         map = new google.maps.Map(document.getElementById('bottom_map'), {
           center: {lat: -35.394, lng: 140.234},
           zoom: 8,
-					disableDefaultUI: true
+					disableDefaultUI: true,
+					scrollwheel: false
+        });
+        map2 = new google.maps.Map(document.getElementById('main-top-map'), {
+          center: {lat: -35.394, lng: 140.234},
+          zoom: 8,
+					disableDefaultUI: true,
+					scrollwheel: false
         });
       }
     </script>
