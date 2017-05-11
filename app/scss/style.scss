@@ -28,6 +28,22 @@ main {
   width: 100%;
 }
 
+.container .button {
+  display: block;
+  color: #323438;
+  line-height: 20px;
+  font-size: 13px;
+  text-decoration: none;
+  width: 104px;
+  height: auto;
+  border-radius: 17px;
+  background-color: #ffffff;
+  border: none;
+  float: right;
+  text-align: center;
+  padding: 10px 0;
+}
+
 @import "domiratv";
 @import "breadCrumbs";
 @import "pageTitle";
@@ -38,3 +54,4 @@ main {
 @import "newsDetailsDomira";
 @import "favoritesDomira";
 @import "aboutDomira";
+@import "homeDomira";
