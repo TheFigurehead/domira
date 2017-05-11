@@ -224,30 +224,36 @@ header {
   transition: all .4s;
   z-index: 1000; }
 
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
 .is-hidden {
   top: -111px;
   transition: all .4s; }
 
-header:after {
-  content: "";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden; }
-
 header img {
-  display: inline-block;
-  float: left;
   margin: 17px 25px; }
 
 header ul {
-  float: right;
   padding: 0;
-  margin: 45px 0; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 75%;
+  min-width: 977px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 header li {
-  display: inline-block;
-  margin-right: 20px;
+  list-style-type: none;
   position: relative; }
 
 header li a {
@@ -299,12 +305,20 @@ header .hidden {
   background-color: rgba(255, 255, 255, 0.9);
   min-width: 100%;
   transition: all .2s;
-  padding: 10px 0; }
+  padding: 10px 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
 
 header .hidden li {
   display: block;
   margin-top: 10px;
-  padding-left: 10px; }
+  padding-left: 10px;
+  position: relative; }
 
 header .drop:hover .hidden {
   opacity: 1;

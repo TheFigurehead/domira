@@ -7,35 +7,31 @@ header {
 	z-index: 1000;
 }
 
+header {
+	display: flex;
+	justify-content: space-between;
+}
+
 .is-hidden {
 	top: -111px;
 	transition: all .4s;
 }
 
-header:after {
-	content: "";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden; 
-}
-
-
 header img {
-	display: inline-block; 
-	float: left; 
 	margin: 17px 25px;
 }
 
 header ul {
-	float: right;
 	padding: 0;
-	margin: 45px 0;
+	display: flex;
+	justify-content: space-around;
+	width: 75%;
+	min-width: 977px;
+	align-items: center;
 }
 
 header li {
-	display: inline-block;
-	margin-right: 20px;
+	list-style-type: none;
 	position: relative;
 }
 
@@ -94,12 +90,15 @@ header .hidden {
 	min-width: 100%;
 	transition: all .2s;
 	padding: 10px 0;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 header .hidden li {
 	display: block;
 	margin-top: 10px;
 	padding-left: 10px;
+	position: relative;
 }
 
 header .drop:hover .hidden {
