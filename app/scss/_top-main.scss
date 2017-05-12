@@ -26,6 +26,11 @@
       overflow: hidden;
       position: relative;
       font: 700 15px "ClearSans-Regular", sans-serif;
+      cursor: pointer;
+      &:hover img{
+        opacity: 0.3;
+        transition: all .4s;
+      }
       img{
         opacity: 0.1;
         position: absolute;
@@ -33,6 +38,7 @@
         top:50%;
         left: 0;
         transform: translateY(-50%);
+        transition: all .4s;
       }
       .jk-list-item-content{
         display: inline-block;

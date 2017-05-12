@@ -384,7 +384,11 @@ header .drop:hover .hidden {
     height: 250px;
     overflow: hidden;
     position: relative;
-    font: 700 15px "ClearSans-Regular", sans-serif; }
+    font: 700 15px "ClearSans-Regular", sans-serif;
+    cursor: pointer; }
+    .banner-container .jk-list .jk-list-item:hover img {
+      opacity: 0.3;
+      transition: all .4s; }
     .banner-container .jk-list .jk-list-item img {
       opacity: 0.1;
       position: absolute;
@@ -392,7 +396,8 @@ header .drop:hover .hidden {
       top: 50%;
       left: 0;
       -webkit-transform: translateY(-50%);
-              transform: translateY(-50%); }
+              transform: translateY(-50%);
+      transition: all .4s; }
     .banner-container .jk-list .jk-list-item .jk-list-item-content {
       display: inline-block;
       position: absolute;
