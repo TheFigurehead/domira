@@ -16,27 +16,45 @@
 	box-sizing: border-box; }
 
 body {
-	margin: 0;
-  background-color: #f2f7f8;
-  padding-top: 111px;
+	margin: 0; 
+  background-color: #f2f7f8; 
+  padding-top: 111px; 
+  font-family: "ClearSans-Regular", sans-serif;
+  font-size: 14px;
+  position: relative;
 }
 
-.container {
-  width: 1200px;
-  margin: 0 auto;
-  &:after {
-    content: "";
-    display: block;
-    clear: both;
-  }
+main {
+  width: 100%;
 }
 
+.container .button {
+  display: block;
+  color: #323438;
+  line-height: 20px;
+  font-size: 13px;
+  text-decoration: none;
+  width: 104px;
+  height: auto;
+  border-radius: 17px;
+  background-color: #ffffff;
+  border: none;
+  float: right;
+  text-align: center;
+  padding: 10px 0;
+}
 
 @import "domiratv";
 @import "breadCrumbs";
 @import "pageTitle";
 @import "footer";
 @import "header";
+@import "bootstrap";
+@import "newsDomira";
+@import "newsDetailsDomira";
+@import "favoritesDomira";
+@import "aboutDomira";
+@import "homeDomira";
 @import "map";
 @import "top-main";
 @import "newsAndSales";

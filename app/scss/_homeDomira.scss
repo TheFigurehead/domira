@@ -1,0 +1,100 @@
+main .wrapper .container .layout .button {
+	float: none;
+	background-color: #0080c6;
+	color: #fff;
+	margin: 0 auto;
+}
+
+main .wrapper .container .layout ul {
+	padding: 0;
+	display: inline-block;
+	margin-bottom: 60px;
+}
+
+main .wrapper .container .layout ul li {
+	list-style-type: none;
+	display: inline-block;
+	background-color: #fff;
+	margin: 0;
+	padding: 20px 30px;
+	position: relative;
+}
+
+main .wrapper .container .layout ul li a {
+color: #0080c6;
+font-size: 14px;
+text-decoration: none;
+border-bottom: 2px dotted #0080c6;
+line-height: 30px;
+transition: all 0.2s;
+}
+
+main .wrapper .container .layout {
+	text-align: center;
+}
+
+main .wrapper .container .layout .layout_img {
+	display: inline-block;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+main .wrapper .container .layout ul li:hover a,
+main .wrapper .container .layout ul li:active a {
+	color: #323438;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	border-bottom: none;
+	transition: all 0.2s;
+}
+
+main .wrapper .container .layout ul li::after {
+  content: ''; 
+  position: absolute;
+  border: 10px solid transparent;	
+  border-left: 10px solid #fff; 
+  border-top: 10px solid #fff;
+  bottom: -20px;
+  left: 30px;
+  display: none;
+}
+
+main .wrapper .container .layout li:hover::after {
+	display: block;
+}
+
+main .wrapper .container .layout .page-title {
+	text-align: center;
+	position: relative;
+	padding: 0 95px;
+	margin-bottom: 60px;
+}
+
+main .wrapper .container .layout .page-title h3 {
+	display: inline-block;
+}
+
+.wrapper .container .layout .page-title::before {
+	content: ''; 
+	display: block;
+	width: 90px;
+	height: 2px;
+	background-color: #323438;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.wrapper .container .layout .page-title::after {
+	content: ''; 
+	display: block;
+	width: 90px;
+	height: 2px;
+	background-color: #323438;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}

@@ -6,4 +6,8 @@ footer {
 	color: #b2b8ba;
 	line-height: 20px;
 	font: 400 13px "ClearSans-Regular", sans-serif;
+	z-index: 9000;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }

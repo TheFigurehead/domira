@@ -1,13 +1,20 @@
 .page-title {
 	text-align: left;
-	h1 {
-		margin: 15px auto 40px auto;
-
-		font-family: Arial;
-		font-weight: bold;
+	h1,	h2, h3 {
+		margin: 15px auto 0 auto;
+		font-family: "ClearSans-Bold", sans-serif;
 		font-size: 40px;
 		position: relative;
 		display: inline-block;
 		text-transform: uppercase;
+		color: #323438;
+	}
+	h2 {
+		font-size: 28px;
+		margin: 0 auto 0 auto;
+	}
+	h3 {
+		font-size: 34px;
+		margin: 0 auto 0 auto;
 	}
 }
