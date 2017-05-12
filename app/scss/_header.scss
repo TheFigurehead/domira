@@ -17,6 +17,16 @@ header {
 	transition: all .4s;
 }
 
+.opacity {
+	opacity: 0.5;
+	transition: all .2s;
+}
+
+.opacity-hide {
+	opacity: 1;
+	transition: all .2s;
+}
+
 header img {
 	margin: 17px 25px;
 }

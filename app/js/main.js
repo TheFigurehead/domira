@@ -12,6 +12,11 @@ $(document).ready(function() {
 	scrollDelta = 10,
 	scrollOffset = 150;
 
+    var timeoutHeader = setTimeout(function(){ 
+        if ($(window).scrollTop() >= 112)
+            $('header').addClass('is-hidden');
+    }, 2000);
+
 	function autoHideHeader() {
 		var currentTop = $(window).scrollTop();
 
@@ -26,18 +31,59 @@ $(document).ready(function() {
 	}
 
 	$(window).on('scroll', function() {
-		var scrollTop = $(this).scrollTop();
+        clearTimeout( timeoutHeader );
 
-		console.log(scrollTop);
+        timeoutHeader = setTimeout(function(){ 
+            if ($(window).scrollTop() >= 112)
+                $('header').addClass('is-hidden');
+        }, 2000);
+
+		var scrollTop = $(this).scrollTop();
 
 		if( !scrolling ) {
 			scrolling = true;
-			(!window.requestAnimationFrame) ? setTimeout(autoHideHeader, 250) : requestAnimationFrame(autoHideHeader);
+			if(!window.requestAnimationFrame) {
+               setTimeout(autoHideHeader, 250); 
+            }else{
+                requestAnimationFrame(autoHideHeader);
+            }
 		}
+
+        
 	})
+
+    $('header').hover(
+        function (){
+            clearTimeout(timeoutHeader);
+        }, function() {
+            timeoutHeader = setTimeout(function(){ 
+                if ($(window).scrollTop() >= 112)
+                    $('header').addClass('is-hidden');
+            }, 2000);
+        }
+    )
+
     /****************/
     //End Domira autoHideHeader
     /***************/
+    /****************/
+    //Domira hoverOpacity
+    /***************/
+
+    $('header ul li a').hover(
+        function()  {
+            $('header ul li a').addClass('opacity');
+            $(this).addClass('opacity-hide');
+        },
+        function()  {
+            $(this).removeClass('opacity-hide');
+        }
+    )
+
+    /****************/
+    //End Domira hoverOpacity
+    /***************/
+
     /****************/
     //DomiraTV Engine
     /***************/

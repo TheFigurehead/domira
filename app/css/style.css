@@ -27,7 +27,7 @@ main {
 .container .button {
   display: block;
   color: #323438;
-  line-height: 20px;
+  line-height: 34px;
   font-size: 13px;
   text-decoration: none;
   width: 104px;
@@ -36,8 +36,7 @@ main {
   background-color: #ffffff;
   border: none;
   float: right;
-  text-align: center;
-  padding: 10px 0; }
+  text-align: center; }
 
 .movie-media-block {
   display: -webkit-box;
@@ -254,6 +253,14 @@ header {
 .is-hidden {
   top: -111px;
   transition: all .4s; }
+
+.opacity {
+  opacity: 0.5;
+  transition: all .2s; }
+
+.opacity-hide {
+  opacity: 1;
+  transition: all .2s; }
 
 header img {
   margin: 17px 25px; }
@@ -876,7 +883,7 @@ header .drop:hover .hidden {
   max-width: 360px;
   background-size: cover; }
 
-.container .grid_items .item .item_content_wrapper a {
+.container .grid_items .item .item_content_wrapper .box__in a {
   color: #0080c6;
   line-height: 21px;
   font-size: 17px;
@@ -900,11 +907,10 @@ header .drop:hover .hidden {
 .container .grid_items .item .item_content_wrapper span:before,
 .container .main_content_details .text_content_details span:before {
   content: "";
+  display: inline-block;
   width: 10px;
   height: 11px;
   background-image: url(../img/calendar.png);
-  display: inline-block;
-  float: left;
   background-repeat: no-repeat;
   position: absolute;
   bottom: 2px;
@@ -1100,3 +1106,101 @@ main .wrapper .container .layout .page-title h3 {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
+
+main .container .main_content_apartment .img_content_apartment ul li {
+  list-style-type: none;
+  display: inline-block;
+  background-color: #fff;
+  margin: 0;
+  display: inline-block;
+  padding: 25px;
+  margin-right: 20px;
+  position: relative; }
+
+main .container .main_content_apartment .img_content_apartment ul li::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 20px);
+  border: 20px solid transparent;
+  border-bottom: 20px solid #fff;
+  display: none; }
+
+main .container .main_content_apartment .img_content_apartment li:hover::before,
+main .container .main_content_apartment .img_content_apartment li:active::before {
+  display: block; }
+
+main .container .main_content_apartment .img_content_apartment li:hover a img,
+main .container .main_content_apartment .img_content_apartment li:active a img {
+  opacity: 0.2; }
+
+main .container .main_content_apartment .img_content_apartment ul {
+  display: inline-block;
+  padding: 0; }
+
+main .container .main_content_apartment .img_content_apartment {
+  text-align: center;
+  max-width: 500px;
+  min-width: 500px; }
+
+main .container .main_content_apartment .img_content_apartment ul li:last-child {
+  margin-right: 0; }
+
+main .container .main_content_apartment .img_content_apartment .main_img {
+  margin-bottom: 85px;
+  margin-top: 50px; }
+
+main .container .main_content_apartment {
+  padding: 70px 0;
+  border-bottom: 2px solid #fff; }
+
+main .container .main_content_apartment .info_content_apartment {
+  max-width: 470px; }
+
+main .container .main_content_apartment .info_content_apartment .number_of,
+main .container .main_content_apartment .info_content_apartment .statistics,
+main .container .main_content_apartment .info_content_apartment .model {
+  width: 100%;
+  background-color: #fff;
+  padding: 50px;
+  border-bottom: 2px solid #f3f7f8; }
+
+main .container .main_content_apartment .info_content_apartment .model {
+  border-bottom: none; }
+
+main .container .main_content_apartment .info_content_apartment .number_of .flat {
+  display: inline-block;
+  color: #464954;
+  line-height: 17px; }
+
+main .container .main_content_apartment .info_content_apartment .number_of .flat .remaining {
+  display: inline-block;
+  width: 63px;
+  font-size: 15px;
+  margin-right: 15px; }
+
+main .container .main_content_apartment .info_content_apartment .number_of .flat .number_of_flat {
+  width: auto;
+  font-size: 32px;
+  font-family: "ClearSans-Bold", sans-serif; }
+
+main .container .main_content_apartment .info_content_apartment .number_of .button {
+  background-color: #f0f5f7;
+  color: #0080c6;
+  height: 44px;
+  line-height: 44px;
+  width: auto;
+  padding-left: 58px;
+  padding-right: 37px;
+  position: relative; }
+
+main .container .main_content_apartment .info_content_apartment .number_of .button::before {
+  content: "";
+  width: 13px;
+  height: 13px;
+  background-image: url(../img/star2.png);
+  display: inline-block;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: calc(50% - 13px/2);
+  left: 37px; }
