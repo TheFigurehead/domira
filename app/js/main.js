@@ -32,24 +32,20 @@ $(document).ready(function() {
 
 	$(window).on('scroll', function() {
         clearTimeout( timeoutHeader );
-
         timeoutHeader = setTimeout(function(){ 
             if ($(window).scrollTop() >= 112)
                 $('header').addClass('is-hidden');
         }, 2000);
-
 		var scrollTop = $(this).scrollTop();
 
 		if( !scrolling ) {
 			scrolling = true;
 			if(!window.requestAnimationFrame) {
-               setTimeout(autoHideHeader, 250); 
+               setTimeout(autoHideHeader, 250);
             }else{
                 requestAnimationFrame(autoHideHeader);
             }
 		}
-
-        
 	})
 
     $('header').hover(
@@ -60,6 +56,7 @@ $(document).ready(function() {
                 if ($(window).scrollTop() >= 112)
                     $('header').addClass('is-hidden');
             }, 2000);
+            $('header ul li a').removeClass('opacity');
         }
     )
 
@@ -69,8 +66,7 @@ $(document).ready(function() {
     /****************/
     //Domira hoverOpacity
     /***************/
-
-    $('header ul li a').hover(
+        $('header ul li a').hover(
         function()  {
             $('header ul li a').addClass('opacity');
             $(this).addClass('opacity-hide');
@@ -79,6 +75,11 @@ $(document).ready(function() {
             $(this).removeClass('opacity-hide');
         }
     )
+    
+        $("header ul li").on("click", "a", function(){
+    $("header ul li a").removeClass("mark");
+    $(this).addClass("mark");
+    });
 
     /****************/
     //End Domira hoverOpacity
