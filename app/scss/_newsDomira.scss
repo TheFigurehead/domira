@@ -18,7 +18,11 @@
 	margin: 0;
 }
 
-.container .grid_items .item .item_content_wrapper span,
+.date-block-wrapper{
+	display: inline-block;
+}
+
+.date-block-wrapper span,
 .container .main_content_details .text_content_details span {
 	color: #989b9c;
 	line-height: 40px;
@@ -27,7 +31,7 @@
 	position: relative;
 }
 
-.container .grid_items .item .item_content_wrapper span:before,
+.date-block-wrapper span:before,
 .container .main_content_details .text_content_details span:before {
 	content: "";
 	width: 10px;
@@ -46,7 +50,7 @@
 	display: block;
 	height: 0;
 	clear: both;
-	visibility: hidden; 
+	visibility: hidden;
 }
 
 .container .grid_items .item {
