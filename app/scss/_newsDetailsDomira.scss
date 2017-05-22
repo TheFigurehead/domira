@@ -1,6 +1,8 @@
 .container .main_content_details .img_content_details img {
-	max-width: 530px;
-	background-size: cover;
+		max-width: 100%;
+    background-size: cover;
+    display: block;
+    margin: 20px auto;
 }
 
 .container .main_content_details .text_content_details .page_text_content {
@@ -30,7 +32,7 @@
 	display: block;
 	height: 0;
 	clear: both;
-	visibility: hidden; 
+	visibility: hidden;
 }
 
 .container .main_content_details {
