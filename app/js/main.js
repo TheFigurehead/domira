@@ -142,6 +142,26 @@ $(document).ready(function() {
     /********************/
     //End DomiraTV Engine
     /*******************/
+
+// ---------------
+// ***planning tabulation****
+// ---------------
+    $('main .wrapper .container .layout .planing-title li').eq(0).addClass("active_li");
+    $('main .wrapper .container .layout .planing-content a').eq(0).addClass("active");
+  $('main .wrapper .container .layout .planing-title li').click(function(){
+    if(!$(this).hasClass( "active_li" )) {
+      var index = $(this).index();
+      $('.layout .planing-title li').removeClass("active_li");
+      $(this).addClass("active_li");
+      $('main .wrapper .container .layout .planing-content a.active').removeClass("active");
+      $('main .wrapper .container .layout .planing-content a').eq(index).addClass("active");
+    }
+  });
+
+// ---------------
+// ***End  planning tabulation****
+// ---------------
+
 });
 
 function callPlayer(frame_id, func, args) {
