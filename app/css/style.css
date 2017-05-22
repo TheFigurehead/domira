@@ -1139,12 +1139,19 @@ main .container .main_content_apartment .img_content_apartment ul li::before {
   display: none; }
 
 main .container .main_content_apartment .img_content_apartment li:hover::before,
-main .container .main_content_apartment .img_content_apartment li:active::before {
+main .container .main_content_apartment .img_content_apartment li:active::before,
+main .container .main_content_apartment .img_content_apartment .planing-title .active_li:before {
   display: block; }
 
 main .container .main_content_apartment .img_content_apartment li:hover a img,
 main .container .main_content_apartment .img_content_apartment li:active a img {
   opacity: 0.2; }
+
+main .container .main_content_apartment .planing-content a {
+  display: none; }
+
+main .container .main_content_apartment .planing-content .active {
+  display: block; }
 
 main .container .main_content_apartment .img_content_apartment ul {
   display: inline-block;

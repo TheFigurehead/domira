@@ -146,15 +146,16 @@ $(document).ready(function() {
 // ---------------
 // ***planning tabulation****
 // ---------------
-    $('main .wrapper .container .layout .planing-title li').eq(0).addClass("active_li");
-    $('main .wrapper .container .layout .planing-content a').eq(0).addClass("active");
-  $('main .wrapper .container .layout .planing-title li').click(function(){
+    $('main .container .planing-title li').eq(0).addClass("active_li");
+    $('main .container .planing-content a').eq(0).addClass("active");
+  $('main .container .planing-title li').click(function(){
     if(!$(this).hasClass( "active_li" )) {
       var index = $(this).index();
-      $('.layout .planing-title li').removeClass("active_li");
+      $('.planing-title li').removeClass("active_li");
       $(this).addClass("active_li");
-      $('main .wrapper .container .layout .planing-content a.active').removeClass("active");
-      $('main .wrapper .container .layout .planing-content a').eq(index).addClass("active");
+      $('main .container .planing-content a.active').removeClass("active");
+      $('main .container .planing-content a').eq(index).addClass("active");
+      return false;
     }
   });
 
