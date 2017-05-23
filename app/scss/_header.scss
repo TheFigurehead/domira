@@ -26,7 +26,6 @@ header ul {
 	display: flex;
 	justify-content: space-around;
 	width: 75%;
-	min-width: 977px;
 	align-items: center;
 }
 
@@ -104,4 +103,54 @@ header .hidden li {
 header .drop:hover .hidden {
 	opacity: 1;
 	transition: all .2s;
+}
+
+@media screen and(max-width: 1200px){
+	header li a {
+		font-size: 12px;
+
+	}
+}
+
+@media (max-width: 960px){
+	header {
+		display: block;
+		width: 250px;
+		height: 100%;
+		position: fixed;
+	  left: -250px;
+	  box-sizing: border-box;
+	  transition: background, left .4s;
+	  z-index: 9998;
+			ul {
+				padding: 0px 60px;
+				display: block;
+				justify-content: space-around;
+				width: 100%;
+				align-items: center;
+			}
+			.swipe-area{
+
+				.bar-wrapper{
+					  position: absolute;
+					  display: block;
+						width: 50px;
+						height: 50px;
+						background-color: black;
+						left: 100%;
+
+					.nav-icon{
+
+
+					}
+				}
+			}
+
+	}
+
+	header.open{
+			left: 0;
+			transition: background, left .4s;
+		}
+
 }

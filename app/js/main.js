@@ -95,6 +95,18 @@ $(document).ready(function() {
     /********************/
     //End DomiraTV Engine
     /*******************/
+
+    /********************/
+    //Start sidebar menu
+    /*******************/
+    $('.bar-wrapper').click(function() {
+      $('#nav-icon').toggleClass('open');
+      $('header').toggleClass('open');
+    });
+    /********************/
+    //End sidebar menu
+    /*******************/
+
 });
 
 function callPlayer(frame_id, func, args) {
