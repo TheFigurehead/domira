@@ -25,12 +25,14 @@ $(document).ready(function() {
 		scrolling = false;
 	}
 
+    
+
 	$(window).on('scroll', function() {
 		var scrollTop = $(this).scrollTop();
 
-		console.log(scrollTop);
-
-		if( !scrolling ) {
+		//console.log(scrollTop);
+       
+        if( !scrolling ) {
 			scrolling = true;
 			(!window.requestAnimationFrame) ? setTimeout(autoHideHeader, 250) : requestAnimationFrame(autoHideHeader);
 		}
@@ -38,6 +40,7 @@ $(document).ready(function() {
     /****************/
     //End Domira autoHideHeader
     /***************/
+
     /****************/
     //DomiraTV Engine
     /***************/
@@ -114,6 +117,8 @@ $(document).ready(function() {
     /*******************/
 
 });
+
+
 
 function callPlayer(frame_id, func, args) {
     if (window.jQuery && frame_id instanceof jQuery) frame_id = frame_id.get(0).id;

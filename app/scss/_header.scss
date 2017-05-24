@@ -105,6 +105,10 @@ header .drop:hover .hidden {
 	transition: all .2s;
 }
 
+.bar-wrapper{
+	visibility: hidden;
+}
+
 @media screen and(max-width: 1200px){
 	header li a {
 		font-size: 12px;
@@ -142,6 +146,7 @@ body{
 						height: 50px;
 						// background-color: black;
 						left: 100%;
+						visibility: visible;
 
 					.nav-icon{
 						margin-left: 10px;
@@ -186,66 +191,39 @@ body{
 
 
 body header .swipe-area .bar-wrapper .nav-icon {
-  -webkit-transform: rogate(0deg);
-  -moz-transform: rogate(0deg);
-  -ms-transform: rogate(0deg);
-  -o-transform: rogate(0deg);
+ 
   transform: rogate(0deg);
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
+ 
   transition: all 0.3s ease-in-out;
 }
 body header .swipe-area .bar-wrapper .nav-icon span:nth-child(1) {
-//  top: 0px;
-  -webkit-transform-origin: right center;
-  -moz-transform-origin: right center;
-  -ms-transform-origin: right center;
-  -o-transform-origin: right center;
+
   transform-origin: right center;
 }
 body header .swipe-area .bar-wrapper .nav-icon span:nth-child(2) {
-//  top: 18px;
-  -webkit-transform-origin: right center;
-  -moz-transform-origin: right center;
-  -ms-transform-origin: right center;
-  -o-transform-origin: right center;
+ 
   transform-origin: right center;
 }
 body header .swipe-area .bar-wrapper .nav-icon span:nth-child(3) {
-//top: 36px;
-  -webkit-transform-origin: right center;
-  -moz-transform-origin: right center;
-  -ms-transform-origin: right center;
-  -o-transform-origin: right center;
+ 
   transform-origin: right center;
 }
 body header .swipe-area .bar-wrapper .nav-icon#openBurger {
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
+
   transform: rotate(360deg);
 }
 body header .swipe-area .bar-wrapper .nav-icon#openBurger span:nth-child(1) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  top: 21px;
-  width: 70%;
-  left: calc(50% - 8px);
+  transform: rotate(-45deg);
+  top: 7px;
+  width: 50%;
+  left: calc(50% - 33px);
 }
 body header .swipe-area .bar-wrapper .nav-icon#openBurger span:nth-child(2) {
   left: -5px;
 }
 body header .swipe-area .bar-wrapper .nav-icon#openBurger span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  top: 15px;
-  width: 70%;
-  left: calc(50% - 8px);
+  transform: rotate(45deg);
+  top: 33px;
+  left: calc(50% - 33px);
+  width: 50%;
 }
