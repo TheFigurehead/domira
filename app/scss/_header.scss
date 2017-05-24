@@ -113,6 +113,10 @@ header .drop:hover .hidden {
 }
 
 @media (max-width: 960px){
+body{
+
+	padding-top: 0px;
+
 	header {
 		display: block;
 		width: 250px;
@@ -136,21 +140,112 @@ header .drop:hover .hidden {
 					  display: block;
 						width: 50px;
 						height: 50px;
-						background-color: black;
+						// background-color: black;
 						left: 100%;
 
 					.nav-icon{
+						margin-left: 10px;
+							span{
+								position: absolute;
+								height: 5px;
+								width: 33px;
+								background-color: $mainBlueColor;
+							}
+
+							:nth-child(1){
+								top: 10px;
+								border-radius: 28px 28px 0 0;
+							}
+							:nth-child(2){
+								top: 20px;
+							}
+							:nth-child(3){
+								top: 30px;
+								border-radius: 0 0 28px 28px;
+								}
 
 
-					}
+
+
+
+
 				}
 			}
 
 	}
 
-	header.open{
+	&.open{
 			left: 0;
 			transition: background, left .4s;
 		}
 
+	}
+}
+}
+
+
+
+body header .swipe-area .bar-wrapper .nav-icon {
+  -webkit-transform: rogate(0deg);
+  -moz-transform: rogate(0deg);
+  -ms-transform: rogate(0deg);
+  -o-transform: rogate(0deg);
+  transform: rogate(0deg);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+body header .swipe-area .bar-wrapper .nav-icon span:nth-child(1) {
+//  top: 0px;
+  -webkit-transform-origin: right center;
+  -moz-transform-origin: right center;
+  -ms-transform-origin: right center;
+  -o-transform-origin: right center;
+  transform-origin: right center;
+}
+body header .swipe-area .bar-wrapper .nav-icon span:nth-child(2) {
+//  top: 18px;
+  -webkit-transform-origin: right center;
+  -moz-transform-origin: right center;
+  -ms-transform-origin: right center;
+  -o-transform-origin: right center;
+  transform-origin: right center;
+}
+body header .swipe-area .bar-wrapper .nav-icon span:nth-child(3) {
+//top: 36px;
+  -webkit-transform-origin: right center;
+  -moz-transform-origin: right center;
+  -ms-transform-origin: right center;
+  -o-transform-origin: right center;
+  transform-origin: right center;
+}
+body header .swipe-area .bar-wrapper .nav-icon#openBurger {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+body header .swipe-area .bar-wrapper .nav-icon#openBurger span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 21px;
+  width: 70%;
+  left: calc(50% - 8px);
+}
+body header .swipe-area .bar-wrapper .nav-icon#openBurger span:nth-child(2) {
+  left: -5px;
+}
+body header .swipe-area .bar-wrapper .nav-icon#openBurger span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 15px;
+  width: 70%;
+  left: calc(50% - 8px);
 }

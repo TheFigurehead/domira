@@ -12,13 +12,16 @@
   src: url("../fonts/ClearSans-Regular/ClearSans-Regular.eot") format("embedded-opentype"), url("../fonts/ClearSans-Regular/ClearSans-Regular.woff") format("woff"), url("../fonts/ClearSans-Regular/ClearSans-Regular.ttf") format("truetype");
 }
 
+// globals variable
+$mainBlueColor: #0080c6;
+
 * {
 	box-sizing: border-box; }
 
 body {
-	margin: 0; 
-  background-color: #f2f7f8; 
-  padding-top: 111px; 
+	margin: 0;
+  background-color: #f2f7f8;
+  padding-top: 111px;
   font-family: "ClearSans-Regular", sans-serif;
   font-size: 14px;
   position: relative;

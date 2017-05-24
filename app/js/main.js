@@ -100,8 +100,14 @@ $(document).ready(function() {
     //Start sidebar menu
     /*******************/
     $('.bar-wrapper').click(function() {
-      $('#nav-icon').toggleClass('open');
       $('header').toggleClass('open');
+
+       if ($('.nav-icon').attr('id')) {
+         $('.nav-icon').removeAttr('id');
+     } else {
+        $('.nav-icon').attr('id', 'openBurger');
+    }
+
     });
     /********************/
     //End sidebar menu
