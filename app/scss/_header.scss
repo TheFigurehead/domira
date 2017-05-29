@@ -109,6 +109,10 @@ header .drop:hover .hidden {
 	visibility: hidden;
 }
 
+.mobile-head-wrapper{
+	display: none;
+}
+
 @media screen and(max-width: 1200px){
 	header li a {
 		font-size: 12px;
@@ -147,6 +151,7 @@ body{
 						// background-color: black;
 						left: 100%;
 						visibility: visible;
+						z-index: 1;
 
 					.nav-icon{
 						margin-left: 10px;
@@ -168,12 +173,6 @@ body{
 								top: 30px;
 								border-radius: 0 0 28px 28px;
 								}
-
-
-
-
-
-
 				}
 			}
 
@@ -186,14 +185,34 @@ body{
 
 	}
 }
+
+/******************/
+//MOBILE HEADER
+/******************/
+
+.mobile-head-wrapper{
+	width: 100%;
+	height: 100px;
+	background-color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: all .4s;
+	display: flex;
+}
+
+/******************/
+//MOBILE HEADER END
+/******************/
+
 }
 
 
 
 body header .swipe-area .bar-wrapper .nav-icon {
- 
+
   transform: rogate(0deg);
- 
+
   transition: all 0.3s ease-in-out;
 }
 body header .swipe-area .bar-wrapper .nav-icon span:nth-child(1) {
@@ -201,11 +220,11 @@ body header .swipe-area .bar-wrapper .nav-icon span:nth-child(1) {
   transform-origin: right center;
 }
 body header .swipe-area .bar-wrapper .nav-icon span:nth-child(2) {
- 
+
   transform-origin: right center;
 }
 body header .swipe-area .bar-wrapper .nav-icon span:nth-child(3) {
- 
+
   transform-origin: right center;
 }
 body header .swipe-area .bar-wrapper .nav-icon#openBurger {

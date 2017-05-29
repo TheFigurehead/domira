@@ -25,18 +25,17 @@ $(document).ready(function() {
 		scrolling = false;
 	}
 
-    
 
 	$(window).on('scroll', function() {
 		var scrollTop = $(this).scrollTop();
 
-		//console.log(scrollTop);
-       
-        if( !scrolling ) {
+
+      if( !scrolling && window.innerWidth > 960) {
 			scrolling = true;
 			(!window.requestAnimationFrame) ? setTimeout(autoHideHeader, 250) : requestAnimationFrame(autoHideHeader);
 		}
 	})
+
     /****************/
     //End Domira autoHideHeader
     /***************/
@@ -116,6 +115,12 @@ $(document).ready(function() {
     //End sidebar menu
     /*******************/
 
+    $(window).on('resize', function() {
+      if (window.innerWidth < 960){
+        console.log("work");
+      }
+    });
+
 });
 
 
@@ -135,4 +140,8 @@ function callPlayer(frame_id, func, args) {
             "id": frame_id,
         }), "*");
     }
+}
+
+if (window.innerWidth < 768){
+  console.log("work");
 }
