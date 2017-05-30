@@ -36,7 +36,7 @@
 			</div>
 			<div class="banner-container-half">
 				<div class="jk-list">
-					<div class="jk-list-item">
+					<div id="jk_list_1" data-locate="" class="jk-list-item">
 						<div class="jk-list-item-content">
 							<div class="jk-list-item-title">
 								<h2>ЖК«7'Я» в Счастливом</h2>
@@ -230,6 +230,7 @@
 	<script>
       var map;
       function initMap() {
+				var myLatlng = {lat: -35.394, lng: 140.234};
         map = new google.maps.Map(document.getElementById('bottom_map'), {
           center: {lat: -35.394, lng: 140.234},
           zoom: 8,
@@ -242,6 +243,25 @@
 					disableDefaultUI: true,
 					scrollwheel: false
         });
+				var marker = new google.maps.Marker({
+			    position: myLatlng,
+			    map: map2,
+			    title: 'Click to zoom'
+			  });
+
+			  map.addListener('center_changed', function() {
+			    // 3 seconds after the center of the map has changed, pan back to the
+			    // marker.
+			    window.setTimeout(function() {
+			      map2.panTo(marker.getPosition());
+			    }, 3000);
+			  });
+
+			  marker.addListener('click', function() {
+			    map2.setZoom(16);
+			    map2.setCenter(marker.getPosition());
+			  });
+
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkZtj_NS59hdszi8CYfKp6lYmQnaTMYAI&callback=initMap"
