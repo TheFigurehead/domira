@@ -5,6 +5,8 @@
 			<title>Document</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link rel="stylesheet" href="css/style.css">
+
+
 </head>
 <body>
 		<!-- MOBILE HEADER -->
@@ -49,6 +51,8 @@
 			<li class="blue_item star"><a href="#">Избранное</a></li>
 		</ul>
 	</header>
+
+
 	<main id="main">
 	<div class="top-main-block">
 		<div class="banner-container">
@@ -228,12 +232,40 @@
 		</div>
 	</div>
 	</main>
+
+
+	<!-- SWIPE -->
 	<script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script> -->
+
+	<!-- END SWIPE -->
+	<!-- <script type="text/javascript">
+
+			$(document).ready(function() {
+				$(".swipe-area").swipe({
+				swipeStatus:function(event, phase, direction, distance, duration, fingers)
+						{
+								if (phase=="move" && direction =="right") {
+										console.log('swipe');
+
+										$('.nav-icon').attr('id', 'openBurger');
+
+										return false;
+								// }
+								// if (phase=="move" && direction =="left") {
+								//      $("#container").removeClass("open-panel");
+								//      return false;
+								}
+						}
+			});
+		});
+	</script> -->
+
 	<script src="js/main.js"></script>
-	<script src="js/libs.min.js"></script>
+	<!-- <script src="js/libs.min.js"></script> -->
 	<script>
       var map;
       function initMap() {

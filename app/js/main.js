@@ -46,12 +46,14 @@ $(document).ready(function() {
 $(window).on('orientationchange', function() {
   if (!mq.matches) {
     console.log('media');
-    //$(window).off('scroll', scrollHeader);
+
   } else {
     $(window).on('scroll', scrollHeader);
   }
 });
-    /****************/
+
+
+  /****************/
     //End Domira autoHideHeader
     /***************/
 
@@ -93,7 +95,6 @@ $(window).on('orientationchange', function() {
         $(this).hide();
         var wrap_id = $(this).data('id');
         $("#" + wrap_id + " .player").show();
-        // $("#" + wrap_id + " .thumbnail_container .thumbnail").hide();
         $("#" + wrap_id + " .thumbnail_container .start-video").hide();
         $("#" + wrap_id + " .thumbnail_container").css("visibility", "hidden");
 
@@ -130,14 +131,31 @@ $(window).on('orientationchange', function() {
     //End sidebar menu
     /*******************/
 
-    //  $(window).on('resize', function() {
-    // //   if (window.innerWidth < 960){
-    // //     console.log("work");
-    // //   }
-    //     if ($(window).width() < 960){
-    //       console.log('work')
-    //     }
-    //  });
+    /********************/
+    //SWIPE
+    /*******************/
+
+  //   $(".swipe-area").swipe({
+  //   swipeStatus:function(event, phase, direction, distance, duration, fingers)
+  //       {
+  //           if (phase=="move" && direction =="right") {
+  //               console.log('swipe');
+  //                $('header').addClass('open');
+  //                $('.nav-icon').attr('id', 'openBurger');
+  //
+  //               return false;
+  //            }
+  //           if (phase=="move" && direction =="left") {
+  //                 $('.nav-icon').removeAttr('id');
+  //                 $('header').removeClass('open');
+  //                 return false;
+  //           }
+  //       }
+  // });
+
+  /********************/
+  //END SWIPE
+  /*******************/
 
 });
 
