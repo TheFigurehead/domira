@@ -1,8 +1,12 @@
 $(document).ready(function() {
 
+
+
+
     /****************/
     //Domira autoHideHeader
     /***************/
+
 	var header = $('header');
 
 	var headerHeight = $(header).height(),
@@ -25,17 +29,28 @@ $(document).ready(function() {
 		scrolling = false;
 	}
 
+  function scrollHeader() {
+    var scrollTop = $(this).scrollTop();
 
-	$(window).on('scroll', function() {
-		var scrollTop = $(this).scrollTop();
+
+      if( !scrolling ) {
+      scrolling = true;
+      (!window.requestAnimationFrame) ? setTimeout(autoHideHeader, 250) : requestAnimationFrame(autoHideHeader);
+    }
+  }
 
 
-      if( !scrolling && window.innerWidth > 960) {
-			scrolling = true;
-			(!window.requestAnimationFrame) ? setTimeout(autoHideHeader, 250) : requestAnimationFrame(autoHideHeader);
-		}
-	})
 
+  var mq = window.matchMedia( "(min-width: 960px)" );
+
+$(window).on('orientationchange', function() {
+  if (!mq.matches) {
+    console.log('media');
+    //$(window).off('scroll', scrollHeader);
+  } else {
+    $(window).on('scroll', scrollHeader);
+  }
+});
     /****************/
     //End Domira autoHideHeader
     /***************/
@@ -102,7 +117,7 @@ $(document).ready(function() {
     //Start sidebar menu
     /*******************/
     $('.bar-wrapper').click(function() {
-      $('header').toggleClass('open');
+       $('header').toggleClass('open');
 
        if ($('.nav-icon').attr('id')) {
          $('.nav-icon').removeAttr('id');
@@ -115,11 +130,14 @@ $(document).ready(function() {
     //End sidebar menu
     /*******************/
 
-    $(window).on('resize', function() {
-      if (window.innerWidth < 960){
-        console.log("work");
-      }
-    });
+    //  $(window).on('resize', function() {
+    // //   if (window.innerWidth < 960){
+    // //     console.log("work");
+    // //   }
+    //     if ($(window).width() < 960){
+    //       console.log('work')
+    //     }
+    //  });
 
 });
 

@@ -1,3 +1,4 @@
+
 header {
 	background-color: #fff;
 	position: fixed;
@@ -5,6 +6,7 @@ header {
 	top: 0;
 	transition: all .4s;
 	z-index: 1000;
+
 }
 
 header {
@@ -123,7 +125,7 @@ header .drop:hover .hidden {
 @media (max-width: 960px){
 body{
 
-	padding-top: 0px;
+	padding-top: 45px;
 
 	header {
 		display: block;
@@ -192,14 +194,77 @@ body{
 
 .mobile-head-wrapper{
 	width: 100%;
-	height: 100px;
+	height: 45px;
 	background-color: white;
   position: fixed;
-  width: 100%;
   top: 0;
   transition: all .4s;
-	display: flex;
+	text-align: right;
+	z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 155px;
 }
+
+.mobile-head-wrapper a{
+	height: 50px;
+	width: 116px;
+}
+
+.mobile-head-wrapper a img{
+	height: 50px;
+}
+
+.mobile-head-wrapper ul a{
+ text-align: right;
+ margin-left: 0px;
+}
+.mobile-head-wrapper ul{
+	    padding-right: 148px;
+}
+
+.mobile-head-wrapper li{
+	list-style-type: none;
+}
+
+.mobile-head-wrapper ul li a{
+		text-decoration: none;
+}
+.mobile-head-wrapper ul li:first-child{
+	float: right;
+	padding-left: 20px;
+}
+.mobile-head-wrapper ul li:last-child{
+	float: left;
+}
+
+ .mobile-head-wrapper .blue_item a {
+	color: #0080c6;
+	padding-left: 25px;
+	position: relative;
+}
+
+ .mobile-head-wrapper .blue_item a:before {
+	content: "";
+	display: inline-block;
+	width: 21px;
+	height: 20px;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-position: center;
+	left: 0;
+}
+
+ .mobile-head-wrapper .video-camera a:before {
+	background-image: url(../img/video-camera.png)
+}
+
+ .mobile-head-wrapper .star a:before {
+	background-image: url(../img/star.png)
+}
+
 
 /******************/
 //MOBILE HEADER END
