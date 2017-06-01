@@ -41,16 +41,16 @@ $(document).ready(function() {
 
 
 
-  var mq = window.matchMedia( "(min-width: 960px)" );
-
-$(window).on('orientationchange', function() {
-  if (!mq.matches) {
-    console.log('media');
-
-  } else {
+//   var mq = window.matchMedia( "(min-width: 960px)" );
+//
+// $(window).on('orientationchange', function() {
+//   if (!mq.matches) {
+//     console.log('media');
+//
+//   } else {
     $(window).on('scroll', scrollHeader);
-  }
-});
+//   }
+// });
 
 
   /****************/
@@ -117,8 +117,21 @@ $(window).on('orientationchange', function() {
     /********************/
     //Start sidebar menu
     /*******************/
+
+    //OVERLAY
+
+
     $('.bar-wrapper').click(function() {
-       $('header').toggleClass('open');
+
+          $('.mobile-head-wrapper').toggleClass('open');
+          $('.bar-wrapper').toggleClass('open');
+          $('body').toggleClass('open');
+          $('.overlay').toggleClass('open')
+          if($('.overlay').hasClass('open')){
+            $('.overlay').show();
+          }else{
+            $('.overlay').hide();
+          }
 
        if ($('.nav-icon').attr('id')) {
          $('.nav-icon').removeAttr('id');
