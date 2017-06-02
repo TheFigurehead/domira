@@ -1162,15 +1162,12 @@ main .wrapper .container .layout .page-title h3 {
   background-color: #343744; }
 
 .banner-container .jk-list {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: relative; }
+  height: 750px;
+  position: relative;
+  overflow: hidden; }
+  .banner-container .jk-list .jk-list-track {
+    position: relative;
+    transition: top .3s; }
   .banner-container .jk-list .jk-list-item {
     color: #fff;
     height: 250px;
@@ -1184,10 +1181,12 @@ main .wrapper .container .layout .page-title h3 {
       top: 50%;
       left: 0;
       -webkit-transform: translateY(-50%);
-              transform: translateY(-50%); }
+              transform: translateY(-50%);
+      z-index: 0; }
     .banner-container .jk-list .jk-list-item .jk-list-item-content {
       display: inline-block;
       position: absolute;
+      z-index: 1;
       width: 500px;
       top: 50%;
       left: 50px;
@@ -1219,6 +1218,12 @@ main .wrapper .container .layout .page-title h3 {
         font-size: 14px;
         font-weight: 400;
         line-height: 18px; }
+        .banner-container .jk-list .jk-list-item .jk-list-item-content .jk-list-item-text a {
+          color: #0080c6;
+          font-size: 16px;
+          text-decoration: none; }
+          .banner-container .jk-list .jk-list-item .jk-list-item-content .jk-list-item-text a:hover {
+            text-decoration: underline; }
   .banner-container .jk-list .jk-list-nav {
     position: absolute;
     right: 0;
@@ -1236,7 +1241,8 @@ main .wrapper .container .layout .page-title h3 {
       background-position: center center;
       background-repeat: no-repeat; }
       .banner-container .jk-list .jk-list-nav .jk-list-nav-item:hover {
-        cursor: pointer; }
+        cursor: pointer;
+        background-color: #00669f; }
     .banner-container .jk-list .jk-list-nav .up {
       background-image: url("../img/nav-up.png"); }
     .banner-container .jk-list .jk-list-nav .down {

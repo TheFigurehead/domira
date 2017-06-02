@@ -28,8 +28,6 @@ $(document).ready(function() {
 	$(window).on('scroll', function() {
 		var scrollTop = $(this).scrollTop();
 
-		console.log(scrollTop);
-
 		if( !scrolling ) {
 			scrolling = true;
 			(!window.requestAnimationFrame) ? setTimeout(autoHideHeader, 250) : requestAnimationFrame(autoHideHeader);
@@ -95,6 +93,91 @@ $(document).ready(function() {
     /********************/
     //End DomiraTV Engine
     /*******************/
+
+    // main page
+    var mainPage = document.getElementById('main');
+    if (mainPage) {
+        /********************/
+        //top main slider
+        /*******************/
+        var slides = $('.jk-list-item'),
+        slider = $('.jk-list'),
+        sliderTrack = $('.jk-list-track', slider),
+        slidesCount = slides.length,
+        currentTopSlide = 0,
+        currentBottomSlide = 2,
+        slideHeight = slider.height() / 3,
+        currentTop = 0;
+
+        sliderTrack.css({top: '0px'});
+
+        if (slidesCount <= 3) {
+            slideHeight = slider.height() / slidesCount,
+            $('.jk-list-nav-item').css({display: 'none'});
+        }
+
+        slides.height(slideHeight);
+
+        $('.jk-list-nav-item.up').on('click', function() {
+            if (currentTopSlide > 0) {
+                currentTop += slideHeight;
+                currentBottomSlide--;
+                currentTopSlide--;
+                sliderTrack.css({top: currentTop + 'px'});
+            }
+        });
+
+        $('.jk-list-nav-item.down').on('click', function() {
+            if (currentBottomSlide < slidesCount - 1) {
+                currentTop -= slideHeight;
+                currentBottomSlide++;
+                currentTopSlide++;
+                sliderTrack.css({top: currentTop + 'px'});
+            }
+        });
+        /********************/
+        //end top main slider
+        /*******************/
+
+        // main page maps
+        initMap();
+
+        var markersForTopMap = [];
+
+        for (i = 0; i < slides.length; i++) {
+            var item = {};
+            item.lat = +slides[i].dataset.lat;
+            item.lng = +slides[i].dataset.lng;
+            if (item)
+                markersForTopMap.push(item);
+        }
+
+        markersForTopMap.forEach(function(item) {
+            var markerData = {};
+            markerData.position = item;
+            markerData.map = map2;
+            var marker = new google.maps.Marker(markerData);
+        });
+
+        slides.on('click', function() {
+            var center = markersForTopMap[slides.index(this)];
+            map2.setOptions({
+                zoom: 15,
+                center: center
+            })
+        })
+        // end main page maps
+
+        // sales slider
+        $('.sales .slider').slick({
+            prevArrow: $('.sales .arrow-prev'),
+            nextArrow: $('.sales .arrow-next'),
+            adaptiveHeight: true
+        });
+        // end sales slider
+    }
+    // end main page
+
 });
 
 function callPlayer(frame_id, func, args) {
@@ -113,3 +196,23 @@ function callPlayer(frame_id, func, args) {
         }), "*");
     }
 }
+
+// main page maps 
+var map, map2;
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById('bottom_map'), {
+      center: {lat: 50.439172, lng: 30.460447},
+      zoom: 8,
+      disableDefaultUI: true,
+      scrollwheel: false
+    });
+    map2 = new google.maps.Map(document.getElementById('main-top-map'), {
+      center: {lat: 50.439172, lng: 30.460447},
+      zoom: 12,
+      //disableDefaultUI: true,
+      scrollwheel: false
+    });
+}
+// end main page maps
+
