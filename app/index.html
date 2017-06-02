@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="css/style.css">
+			<meta charset="UTF-8">
+			<title>Document</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="css/style.css">
+
+
 </head>
 <body>
-	<header>
+		<!-- OVERLAY -->
+		<div class="overlay"></div>
+		<!--END OVERLAY -->
+
+		<!-- MOBILE HEADER -->
+		<div class="mobile-head-wrapper">
+			<a href="#"><img src="img/logo.png" alt="Domira_logo"></a>
+			<ul>
+				<li><a href="#">Главная</a></li>
+				<li><a href="#">О компании</a></li>
+				<li><a href="#">Новости</a></li>
+				<li><a href="#">Добрые дела</a></li>
+				<li class="drop"><a href="#">Domira Club</a>
+				<ul class="hidden">
+					<li><a href="#">Lorem</a></li>
+					<li><a href="#">Lorem</a></li>
+					<li><a href="#">Lorem</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Работа</a></li>
+				<li><a href="#">Контакты</a></li>
+				<li class="blue_item video-camera"><a href="#">Domira TV</a></li>
+				<li class="blue_item star"><a href="#">Избранное</a></li>
+			</ul>
+		</div>
+		<!-- END MOBILE HEADER -->
+	 <header>
+		<!-- BURGERSSS -->
+		<div class="swipe-area">
+			<div class="bar-wrapper">
+				<div class="nav-icon">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+			<!-- END BURGERSSS -->
+
 		<a href="#"><img src="img/logo.png" alt="Domira_logo"></a>
 		<ul>
 			<li><a href="#">Главная</a></li>
@@ -26,6 +67,8 @@
 			<li class="blue_item star"><a href="#">Избранное</a></li>
 		</ul>
 	</header>
+
+
 	<main id="main">
 	<div class="top-main-block">
 		<div class="banner-container">
@@ -221,12 +264,40 @@
 		</div>
 	</div>
 	</main>
+
+
+	<!-- SWIPE -->
 	<script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script> -->
+
+	<!-- END SWIPE -->
+	<!-- <script type="text/javascript">
+
+			$(document).ready(function() {
+				$(".swipe-area").swipe({
+				swipeStatus:function(event, phase, direction, distance, duration, fingers)
+						{
+								if (phase=="move" && direction =="right") {
+										console.log('swipe');
+
+										$('.nav-icon').attr('id', 'openBurger');
+
+										return false;
+								// }
+								// if (phase=="move" && direction =="left") {
+								//      $("#container").removeClass("open-panel");
+								//      return false;
+								}
+						}
+			});
+		});
+	</script> -->
+
 	<script src="js/main.js"></script>
-	<script src="js/libs.min.js"></script>
+	<!-- <script src="js/libs.min.js"></script> -->
 	<script>
       var map;
       function initMap() {

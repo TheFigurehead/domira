@@ -34,3 +34,32 @@
 	margin-bottom: 0;
 }
 
+@media screen and (max-width: 996px){
+	.page_text .main_content_img {
+		height: 100%;
+		width: 50%;
+		background-image: url(../img/pexels-photo1.png);
+		position: fixed;
+		top: 0;
+		right: 0;
+		background-repeat: no-repeat;
+		background-position: top right;
+		background-size: cover;
+		visibility: hidden;
+	}
+	.main_mobile_content_img{
+		height: 200px;
+		width: 100%;
+		background-image: url(../img/pexels-photo1.png);
+		position: relative;
+		top: 0;
+		right: 0;
+		background-repeat: no-repeat;
+		background-position: top right;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	
+
+}

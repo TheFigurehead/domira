@@ -1,8 +1,12 @@
 $(document).ready(function() {
 
+
+
+
     /****************/
     //Domira autoHideHeader
     /***************/
+
 	var header = $('header');
 
 	var headerHeight = $(header).height(),
@@ -25,19 +29,34 @@ $(document).ready(function() {
 		scrolling = false;
 	}
 
-	$(window).on('scroll', function() {
-		var scrollTop = $(this).scrollTop();
+  function scrollHeader() {
+    var scrollTop = $(this).scrollTop();
 
-		console.log(scrollTop);
 
-		if( !scrolling ) {
-			scrolling = true;
-			(!window.requestAnimationFrame) ? setTimeout(autoHideHeader, 250) : requestAnimationFrame(autoHideHeader);
-		}
-	})
-    /****************/
+      if( !scrolling ) {
+      scrolling = true;
+      (!window.requestAnimationFrame) ? setTimeout(autoHideHeader, 250) : requestAnimationFrame(autoHideHeader);
+    }
+  }
+
+
+
+//   var mq = window.matchMedia( "(min-width: 960px)" );
+//
+// $(window).on('orientationchange', function() {
+//   if (!mq.matches) {
+//     console.log('media');
+//
+//   } else {
+    $(window).on('scroll', scrollHeader);
+//   }
+// });
+
+
+  /****************/
     //End Domira autoHideHeader
     /***************/
+
     /****************/
     //DomiraTV Engine
     /***************/
@@ -76,7 +95,6 @@ $(document).ready(function() {
         $(this).hide();
         var wrap_id = $(this).data('id');
         $("#" + wrap_id + " .player").show();
-        // $("#" + wrap_id + " .thumbnail_container .thumbnail").hide();
         $("#" + wrap_id + " .thumbnail_container .start-video").hide();
         $("#" + wrap_id + " .thumbnail_container").css("visibility", "hidden");
 
@@ -95,7 +113,66 @@ $(document).ready(function() {
     /********************/
     //End DomiraTV Engine
     /*******************/
+
+    /********************/
+    //Start sidebar menu
+    /*******************/
+
+    //OVERLAY
+
+
+    $('.bar-wrapper').click(function() {
+
+          $('.mobile-head-wrapper').toggleClass('open');
+          $('.bar-wrapper').toggleClass('open');
+          $('body').toggleClass('open');
+          $('.overlay').toggleClass('open')
+          if($('.overlay').hasClass('open')){
+            $('.overlay').show();
+          }else{
+            $('.overlay').hide();
+          }
+
+       if ($('.nav-icon').attr('id')) {
+         $('.nav-icon').removeAttr('id');
+     } else {
+        $('.nav-icon').attr('id', 'openBurger');
+    }
+
+    });
+    /********************/
+    //End sidebar menu
+    /*******************/
+
+    /********************/
+    //SWIPE
+    /*******************/
+
+  //   $(".swipe-area").swipe({
+  //   swipeStatus:function(event, phase, direction, distance, duration, fingers)
+  //       {
+  //           if (phase=="move" && direction =="right") {
+  //               console.log('swipe');
+  //                $('header').addClass('open');
+  //                $('.nav-icon').attr('id', 'openBurger');
+  //
+  //               return false;
+  //            }
+  //           if (phase=="move" && direction =="left") {
+  //                 $('.nav-icon').removeAttr('id');
+  //                 $('header').removeClass('open');
+  //                 return false;
+  //           }
+  //       }
+  // });
+
+  /********************/
+  //END SWIPE
+  /*******************/
+
 });
+
+
 
 function callPlayer(frame_id, func, args) {
     if (window.jQuery && frame_id instanceof jQuery) frame_id = frame_id.get(0).id;
@@ -112,4 +189,8 @@ function callPlayer(frame_id, func, args) {
             "id": frame_id,
         }), "*");
     }
+}
+
+if (window.innerWidth < 768){
+  console.log("work");
 }
