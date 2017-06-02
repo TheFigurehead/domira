@@ -34,13 +34,18 @@ main .wrapper .container .layout {
 }
 
 main .wrapper .container .layout .layout_img {
-	display: inline-block;
+	display: none;
 	text-align: center;
 	margin-bottom: 30px;
 }
 
+main .wrapper .container .layout .active {
+	display: inline-block;
+}
+
 main .wrapper .container .layout ul li:hover a,
-main .wrapper .container .layout ul li:active a {
+main .wrapper .container .layout ul li:active a,
+main .wrapper .container .layout .active_li a, {
 	color: #323438;
 	font-size: 18px;
 	font-weight: 700;
@@ -60,7 +65,8 @@ main .wrapper .container .layout ul li::after {
   display: none;
 }
 
-main .wrapper .container .layout li:hover::after {
+main .wrapper .container .layout li:hover::after,
+main .wrapper .container .layout .active_li:after {
 	display: block;
 }
 

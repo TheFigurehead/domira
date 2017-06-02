@@ -16,6 +16,11 @@ $(document).ready(function() {
 	scrollDelta = 10,
 	scrollOffset = 150;
 
+    var timeoutHeader = setTimeout(function(){
+        if ($(window).scrollTop() >= 112)
+            $('header').addClass('is-hidden');
+    }, 2000);
+
 	function autoHideHeader() {
 		var currentTop = $(window).scrollTop();
 
@@ -29,32 +34,61 @@ $(document).ready(function() {
 		scrolling = false;
 	}
 
-  function scrollHeader() {
-    var scrollTop = $(this).scrollTop();
 
+	$(window).on('scroll', function() {
+        clearTimeout( timeoutHeader );
+        timeoutHeader = setTimeout(function(){
+            if ($(window).scrollTop() >= 112)
+                $('header').addClass('is-hidden');
+        }, 2000);
+		var scrollTop = $(this).scrollTop();
 
-      if( !scrolling ) {
-      scrolling = true;
-      (!window.requestAnimationFrame) ? setTimeout(autoHideHeader, 250) : requestAnimationFrame(autoHideHeader);
-    }
-  }
+		if( !scrolling ) {
+			scrolling = true;
+			if(!window.requestAnimationFrame) {
+               setTimeout(autoHideHeader, 250);
+            }else{
+                requestAnimationFrame(autoHideHeader);
+            }
+		}
+	})
 
+    $('header').hover(
+        function (){
+            clearTimeout(timeoutHeader);
+        }, function() {
+            timeoutHeader = setTimeout(function(){
+                if ($(window).scrollTop() >= 112)
+                    $('header').addClass('is-hidden');
+            }, 2000);
+            $('header ul li a').removeClass('opacity');
+        }
+    )
 
-
-//   var mq = window.matchMedia( "(min-width: 960px)" );
-//
-// $(window).on('orientationchange', function() {
-//   if (!mq.matches) {
-//     console.log('media');
-//
-//   } else {
-    $(window).on('scroll', scrollHeader);
-//   }
-// });
-
-
-  /****************/
+    /****************/
     //End Domira autoHideHeader
+    /***************/
+
+    /****************/
+    //Domira hoverOpacity
+    /***************/
+        $('header ul li a').hover(
+        function()  {
+            $('header ul li a').addClass('opacity');
+            $(this).addClass('opacity-hide');
+        },
+        function()  {
+            $(this).removeClass('opacity-hide');
+        }
+    )
+
+        $("header ul li").on("click", "a", function(){
+    $("header ul li a").removeClass("mark");
+    $(this).addClass("mark");
+    });
+
+    /****************/
+    //End Domira hoverOpacity
     /***************/
 
     /****************/
@@ -169,6 +203,26 @@ $(document).ready(function() {
   /********************/
   //END SWIPE
   /*******************/
+// ---------------
+// ***planning tabulation****
+// ---------------
+    $('main .container .planing-title li').eq(0).addClass("active_li");
+    $('main .container .planing-content a').eq(0).addClass("active");
+  $('main .container .planing-title li').click(function(){
+    if(!$(this).hasClass( "active_li" )) {
+      var index = $(this).index();
+      $('.planing-title li').removeClass("active_li");
+      $(this).addClass("active_li");
+      $('main .container .planing-content a.active').removeClass("active");
+      $('main .container .planing-content a').eq(index).addClass("active");
+      return false;
+    }
+  });
+
+// ---------------
+// ***End  planning tabulation****
+// ---------------
+>>>>>>> Ann
 
 });
 

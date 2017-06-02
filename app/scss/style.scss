@@ -34,7 +34,7 @@ main {
 .container .button {
   display: block;
   color: #323438;
-  line-height: 20px;
+  line-height: 34px;
   font-size: 13px;
   text-decoration: none;
   width: 104px;
@@ -44,7 +44,6 @@ main {
   border: none;
   float: right;
   text-align: center;
-  padding: 10px 0;
 }
 
 @import "domiratv";
@@ -61,3 +60,4 @@ main {
 @import "map";
 @import "top-main";
 @import "newsAndSales";
+@import "apartmentDomira";
