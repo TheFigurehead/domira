@@ -222,7 +222,6 @@ $(document).ready(function() {
 // ---------------
 // ***End  planning tabulation****
 // ---------------
->>>>>>> Ann
 
 });
 
