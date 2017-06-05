@@ -25,6 +25,9 @@ body {
   font-family: "ClearSans-Regular", sans-serif;
   font-size: 14px;
   position: relative;
+  display: flex;
+   min-height: 100vh;
+   flex-direction: column;
 }
 
 main {

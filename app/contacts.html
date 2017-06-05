@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+			<meta charset="UTF-8">
+			<title>Contacts</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+		<!-- OVERLAY -->
+		<div class="overlay"></div>
+		<!--END OVERLAY -->
+
+		<!-- MOBILE HEADER -->
+		<div class="mobile-head-wrapper">
+			<a href="#"><img src="img/logo.png" alt="Domira_logo"></a>
+			<ul>
+				<li><a href="#">Главная</a></li>
+				<li><a href="#">О компании</a></li>
+				<li><a href="#">Новости</a></li>
+				<li><a href="#">Добрые дела</a></li>
+				<li class="drop"><a href="#">Domira Club</a>
+				<ul class="hidden">
+					<li><a href="#">Lorem</a></li>
+					<li><a href="#">Lorem</a></li>
+					<li><a href="#">Lorem</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Работа</a></li>
+				<li><a href="#">Контакты</a></li>
+			</ul>
+		</div>
+		<!-- END MOBILE HEADER -->
+	 <header>
+		<!-- BURGERSSS -->
+		<div class="swipe-area">
+			<div class="bar-wrapper">
+				<div class="nav-icon">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+			<!-- END BURGERSSS -->
+
+		<a href="#"><img src="img/logo.png" alt="Domira_logo"></a>
+		<ul>
+			<li><a href="#">Главная</a></li>
+			<li><a href="#">О компании</a></li>
+			<li><a href="#">Новости</a></li>
+			<li><a href="#">Добрые дела</a></li>
+			<li class="drop"><a href="#">Domira Club</a>
+			<ul class="hidden">
+				<li><a href="#">Lorem</a></li>
+				<li><a href="#">Lorem</a></li>
+				<li><a href="#">Lorem</a></li>
+			</ul>
+			</li>
+			<li><a href="#">Работа</a></li>
+			<li><a href="#">Контакты</a></li>
+			<li class="blue_item video-camera"><a href="#">Domira TV</a></li>
+			<li class="blue_item star"><a href="#">Избранное</a></li>
+		</ul>
+	</header>
+
+	<div class="breadcrumbs">
+			<ul>
+					<li><a href="#">Главная</a></li>
+					<li><a href="#">Контакты</a></li>
+			</ul>
+	</div>
+
+	<main id="main">
+
+		<section class="contacts">
+			<div id="map-contact" style="height: 100%"></div>
+			<div class="info">
+				<div class="info-left">
+					<h2 class="title">Контакты</h2>
+					<p class="text">Отдел продаж компании:</p>
+					<p class="number">+7 (495) 123-32-23</p>
+					<p class="number">+7 (495) 321-12-21</p>
+					<p class="text">Контакты компании:</p>
+					<p class="number">+7 (495) 123-32-23</p>
+					<a class="mail" href="mailto:info@domira.com.ua">info@domira.com.ua</a>
+				</div>
+				<div class="info-right">
+					<a class="icon" href="#"><img src="img/social/fb.png" alt=""></a><br />
+					<a class="icon" href="#"><img src="img/social/inst.png" alt=""></a><br />
+					<a class="icon" href="#"><img src="img/social/in.png" alt=""></a><br />
+				</div>
+			</div>
+		</section>
+	</main>
+
+
+	<footer>
+	  <span>© 2016, Domira Development</span>
+	</footer>
+
+	<!-- SWIPE -->
+	<script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script> -->
+
+	<!-- END SWIPE -->
+	<!-- <script type="text/javascript">
+
+			$(document).ready(function() {
+				$(".swipe-area").swipe({
+				swipeStatus:function(event, phase, direction, distance, duration, fingers)
+						{
+								if (phase=="move" && direction =="right") {
+										console.log('swipe');
+
+										$('.nav-icon').attr('id', 'openBurger');
+
+										return false;
+								// }
+								// if (phase=="move" && direction =="left") {
+								//      $("#container").removeClass("open-panel");
+								//      return false;
+								}
+						}
+			});
+		});
+	</script> -->
+
+	<script src="js/main.js"></script>
+	<!-- <script src="js/libs.min.js"></script> -->
+	<script>
+	
+    </script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkZtj_NS59hdszi8CYfKp6lYmQnaTMYAI&callback=initMap"
+     async defer></script>
+</body>
+</html>

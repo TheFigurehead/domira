@@ -202,3 +202,40 @@ function callPlayer(frame_id, func, args) {
 if (window.innerWidth < 768){
   console.log("work");
 }
+
+
+// init map contact page
+var map,
+style = [];
+
+function initMap() {
+  map2 = new google.maps.Map(document.getElementById('map-contact'), {
+    center: {lat: 50.420682, lng: 30.555695},
+    zoom: 12,
+    scrollwheel: false,
+    styles: style
+  });
+
+  var markers2 = [
+    {
+      position: {lat: 50.411994, lng: 30.436709},
+      map: map2,
+      icon: 'img/otdel_1.png'
+    },
+    {
+      position: {lat: 50.439172, lng: 30.460447},
+      map: map2,
+      icon: 'img/main_office.png'
+    },
+    {
+      position: {lat: 50.420682, lng: 30.555695},
+      map: map2,
+      icon: 'img/otdel_2.png'
+    }
+  ];
+
+  markers2.forEach(function(item, i, arr) {
+    var marker = new google.maps.Marker(item);
+  })
+}
+// end init contact page
