@@ -5,6 +5,7 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
+	<script src="https://use.fontawesome.com/f011440108.js"></script>
 </head>
 <body>
 	<header>
@@ -28,7 +29,7 @@
 		</ul>
 	</header>
 
-	<main>
+	<main id="apartment">
 		<div class="container">
 			<div class="breadcrumbs">
     		<ul>
@@ -46,8 +47,12 @@
 				<div class="row">
 					<div class="col-md-7">
 						<div class="img_content_apartment">
-    					<img src="img/plan23.png" alt="img content apartment" class="main_img">
-    					<ul>
+							<div class="planing-content">
+    						<a href="#"><img src="img/plan23.png" alt="img content apartment" class="main_img"></a>
+    						<a href="#"><img src="img/plan25.png" alt="img content apartment" class="main_img"></a>
+    						<a href="#"><img src="img/plan26.png" alt="img content apartment" class="main_img"></a>
+    					</div>
+    					<ul class="planing-title">
     						<li>
     							<a href="#"><img src="img/25.png" alt=""></a>
     						</li>
@@ -138,6 +143,26 @@
 	<footer>
 		<span>© 2016, Domira Development</span>
 	</footer>
+
+	  <div class="popup-container">
+    <h2>Связаться с нами</h2>
+    <form action="" class="popup">
+
+
+      <div class="input-wrapper">
+        <input type="text" placeholder="Введите Ваше имя" />
+        <input type="tel" placeholder="Введите Ваш номер телефона" />
+        <input type="email" placeholder="Введите Ваш email" />
+      </div>
+
+      <button type="submit">Связаться с нами</button>
+    </form>
+
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </div>
+
+  <div class="popup-overflow">
+  </div>
 
 	<script
       src="https://code.jquery.com/jquery-3.2.1.min.js"

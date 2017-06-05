@@ -142,6 +142,58 @@ $(document).ready(function() {
     /********************/
     //End DomiraTV Engine
     /*******************/
+
+// ---------------
+// ***planning tabulation****
+// ---------------
+    $('main .container .planing-title li').eq(0).addClass("active_li");
+    $('main .container .planing-content a').eq(0).addClass("active");
+  $('main .container .planing-title li').click(function(){
+    if(!$(this).hasClass( "active_li" )) {
+      var index = $(this).index();
+      $('.planing-title li').removeClass("active_li");
+      $(this).addClass("active_li");
+      $('main .container .planing-content a.active').removeClass("active");
+      $('main .container .planing-content a').eq(index).addClass("active");
+      return false;
+    }
+  });
+
+// ---------------
+// ***End  planning tabulation****
+// ---------------
+
+// -----------
+// ***popup***
+// -----------
+
+var apartmentPage = document.getElementById('apartment');
+
+if (apartmentPage) {
+  $('.number_of .button').on('click', popUpShow);
+}
+
+$('.popup-container').hide();
+
+$('.popup-overflow').on('click', popUpHide);
+
+$('.popup-container .fa-times').on('click', popUpHide);
+
+function popUpShow(e) {
+  e.stopPropagation();
+  $('.popup-container').show(300);
+  $(".popup-overflow").css('display', 'block');
+}
+
+function popUpHide(e) {
+  $('.popup-container').hide(300);
+  $(".popup-overflow").css('display', 'none');
+}
+
+// -----------
+// *end popup*
+// -----------
+
 });
 
 function callPlayer(frame_id, func, args) {
