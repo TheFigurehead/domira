@@ -19,7 +19,8 @@ return gulp.src(['app/scss/style.scss', 'app/scss/libs.min.scss'])
 
 gulp.task('script', function() {
 return gulp.src([
-'app/libs/jquery/dist/jquery.min.js'
+'app/libs/jquery/dist/jquery.min.js',
+'app/libs/slick/slick.min.js'
 ])
 .pipe(concat('libs.min.js'))
 //.pipe(uglify())

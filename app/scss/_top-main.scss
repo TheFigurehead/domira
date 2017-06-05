@@ -1,11 +1,10 @@
-.banner-container
-{
+.banner-container {
   &::after{
     display: table;
     content: '';
     clear: both;
   }
-  .banner-container-half{
+  .banner-container-half {
     float: left;
     width: 50%;
     display: inline-block;
@@ -16,10 +15,13 @@
     background-color: #343744;
   }
   .jk-list{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    height: 750px;
     position: relative;
+    overflow: hidden;
+    .jk-list-track {
+      position: relative;
+      transition: top .3s;
+    }
     .jk-list-item{
       color: #fff;
       height: 250px;
@@ -33,10 +35,12 @@
         top:50%;
         left: 0;
         transform: translateY(-50%);
+        z-index: 0;
       }
       .jk-list-item-content{
         display: inline-block;
         position: absolute;
+        z-index: 1;
         width: 500px;
         top:50%;
         left: 50px;
@@ -70,6 +74,14 @@
           font-size: 14px;
           font-weight: 400;
           line-height: 18px;
+          a {
+            color: #0080c6;
+            font-size: 16px;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
         }
       }
     }
@@ -90,6 +102,7 @@
         background-repeat: no-repeat;
         &:hover{
           cursor: pointer;
+          background-color: darken(#0070ae, 3%);
         }
       }
       .up{
