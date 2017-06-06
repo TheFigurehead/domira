@@ -16,6 +16,11 @@ $(document).ready(function() {
 	scrollDelta = 10,
 	scrollOffset = 150;
 
+    var timeoutHeader = setTimeout(function(){
+        if ($(window).scrollTop() >= 112)
+            $('header').addClass('is-hidden');
+    }, 2000);
+
 	function autoHideHeader() {
 		var currentTop = $(window).scrollTop();
 
@@ -29,32 +34,61 @@ $(document).ready(function() {
 		scrolling = false;
 	}
 
-  function scrollHeader() {
-    var scrollTop = $(this).scrollTop();
 
+	$(window).on('scroll', function() {
+        clearTimeout( timeoutHeader );
+        timeoutHeader = setTimeout(function(){
+            if ($(window).scrollTop() >= 112)
+                $('header').addClass('is-hidden');
+        }, 2000);
+		var scrollTop = $(this).scrollTop();
 
-      if( !scrolling ) {
-      scrolling = true;
-      (!window.requestAnimationFrame) ? setTimeout(autoHideHeader, 250) : requestAnimationFrame(autoHideHeader);
-    }
-  }
+		if( !scrolling ) {
+			scrolling = true;
+			if(!window.requestAnimationFrame) {
+               setTimeout(autoHideHeader, 250);
+            }else{
+                requestAnimationFrame(autoHideHeader);
+            }
+		}
+	})
 
+    $('header').hover(
+        function (){
+            clearTimeout(timeoutHeader);
+        }, function() {
+            timeoutHeader = setTimeout(function(){
+                if ($(window).scrollTop() >= 112)
+                    $('header').addClass('is-hidden');
+            }, 2000);
+            $('header ul li a').removeClass('opacity');
+        }
+    )
 
-
-//   var mq = window.matchMedia( "(min-width: 960px)" );
-//
-// $(window).on('orientationchange', function() {
-//   if (!mq.matches) {
-//     console.log('media');
-//
-//   } else {
-    $(window).on('scroll', scrollHeader);
-//   }
-// });
-
-
-  /****************/
+    /****************/
     //End Domira autoHideHeader
+    /***************/
+
+    /****************/
+    //Domira hoverOpacity
+    /***************/
+        $('header ul li a').hover(
+        function()  {
+            $('header ul li a').addClass('opacity');
+            $(this).addClass('opacity-hide');
+        },
+        function()  {
+            $(this).removeClass('opacity-hide');
+        }
+    )
+
+        $("header ul li").on("click", "a", function(){
+    $("header ul li a").removeClass("mark");
+    $(this).addClass("mark");
+    });
+
+    /****************/
+    //End Domira hoverOpacity
     /***************/
 
     /****************/
@@ -177,6 +211,109 @@ $(document).ready(function() {
   /********************/
   //END SWIPE
   /*******************/
+// ---------------
+// ***planning tabulation****
+// ---------------
+    $('main .container .planing-title li').eq(0).addClass("active_li");
+    $('main .container .planing-content a').eq(0).addClass("active");
+  $('main .container .planing-title li').click(function(){
+    if(!$(this).hasClass( "active_li" )) {
+      var index = $(this).index();
+      $('.planing-title li').removeClass("active_li");
+      $(this).addClass("active_li");
+      $('main .container .planing-content a.active').removeClass("active");
+      $('main .container .planing-content a').eq(index).addClass("active");
+      return false;
+    }
+  });
+
+// ---------------
+// ***End  planning tabulation****
+// ---------------
+
+    // main page
+    var mainPage = document.getElementById('main');
+    if (mainPage) {
+        /********************/
+        //top main slider
+        /*******************/
+        var slides = $('.jk-list-item'),
+        slider = $('.jk-list'),
+        sliderTrack = $('.jk-list-track', slider),
+        slidesCount = slides.length,
+        currentTopSlide = 0,
+        currentBottomSlide = 2,
+        slideHeight = slider.height() / 3,
+        currentTop = 0;
+
+        sliderTrack.css({top: '0px'});
+
+        if (slidesCount <= 3) {
+            slideHeight = slider.height() / slidesCount,
+            $('.jk-list-nav-item').css({display: 'none'});
+        }
+
+        slides.height(slideHeight);
+
+        $('.jk-list-nav-item.up').on('click', function() {
+            if (currentTopSlide > 0) {
+                currentTop += slideHeight;
+                currentBottomSlide--;
+                currentTopSlide--;
+                sliderTrack.css({top: currentTop + 'px'});
+            }
+        });
+
+        $('.jk-list-nav-item.down').on('click', function() {
+            if (currentBottomSlide < slidesCount - 1) {
+                currentTop -= slideHeight;
+                currentBottomSlide++;
+                currentTopSlide++;
+                sliderTrack.css({top: currentTop + 'px'});
+            }
+        });
+        /********************/
+        //end top main slider
+        /*******************/
+
+        // main page maps
+        initMap();
+
+        var markersForTopMap = [];
+
+        for (i = 0; i < slides.length; i++) {
+            var item = {};
+            item.lat = +slides[i].dataset.lat;
+            item.lng = +slides[i].dataset.lng;
+            if (item)
+                markersForTopMap.push(item);
+        }
+
+        markersForTopMap.forEach(function(item) {
+            var markerData = {};
+            markerData.position = item;
+            markerData.map = map2;
+            var marker = new google.maps.Marker(markerData);
+        });
+
+        slides.on('click', function() {
+            var center = markersForTopMap[slides.index(this)];
+            map2.setOptions({
+                zoom: 15,
+                center: center
+            })
+        })
+        // end main page maps
+
+        // sales slider
+        $('.sales .slider').slick({
+            prevArrow: $('.sales .arrow-prev'),
+            nextArrow: $('.sales .arrow-next'),
+            adaptiveHeight: true
+        });
+        // end sales slider
+    }
+    // end main page
 
 });
 
@@ -199,17 +336,17 @@ function callPlayer(frame_id, func, args) {
     }
 }
 
+
 if (window.innerWidth < 768){
   console.log("work");
 }
 
-
 // init map contact page
-var map,
+var map_con,
 style = [];
 
 function initMap() {
-  map2 = new google.maps.Map(document.getElementById('map-contact'), {
+  map_con = new google.maps.Map(document.getElementById('map-contact'), {
     center: {lat: 50.420682, lng: 30.555695},
     zoom: 12,
     scrollwheel: false,
@@ -239,3 +376,22 @@ function initMap() {
   })
 }
 // end init contact page
+
+// main page maps
+var map, map2;
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById('bottom_map'), {
+      center: {lat: 50.439172, lng: 30.460447},
+      zoom: 8,
+      disableDefaultUI: true,
+      scrollwheel: false
+    });
+    map2 = new google.maps.Map(document.getElementById('main-top-map'), {
+      center: {lat: 50.439172, lng: 30.460447},
+      zoom: 12,
+      //disableDefaultUI: true,
+      scrollwheel: false
+    });
+}
+// end main page maps

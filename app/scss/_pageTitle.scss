@@ -1,6 +1,6 @@
 .page-title {
 	text-align: left;
-	h1,	h2, h3 {
+	h1,	h2, h3, h4 {
 		margin: 15px auto 0 auto;
 		font-family: "ClearSans-Bold", sans-serif;
 		font-size: 40px;
@@ -15,6 +15,10 @@
 	}
 	h3 {
 		font-size: 34px;
+		margin: 0 auto 0 auto;
+	}
+	h4 {
+		font-size: 30px;
 		margin: 0 auto 0 auto;
 	}
 }

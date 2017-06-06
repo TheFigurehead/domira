@@ -3,7 +3,7 @@
 	background-size: cover;
 }
 
-.container .grid_items .item .item_content_wrapper a {
+.container .grid_items .item .item_content_wrapper .box__in a {
 	color: #0080c6;
 	line-height: 21px;
 	font-size: 17px;
@@ -30,11 +30,10 @@
 .container .grid_items .item .item_content_wrapper span:before,
 .container .main_content_details .text_content_details span:before {
 	content: "";
+	display: inline-block;
 	width: 10px;
 	height: 11px;
 	background-image: url(../img/calendar.png);
-	display: inline-block;
-	float: left;
 	background-repeat: no-repeat;
 	position: absolute;
 	bottom: 2px;
