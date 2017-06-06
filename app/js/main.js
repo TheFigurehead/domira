@@ -342,16 +342,33 @@ if (window.innerWidth < 768){
 }
 
 // init map contact page
-var map_con,
+var map_con,map, map2,
 style = [];
 
 function initMap() {
+  if(document.getElementById('map-contact')){
   map_con = new google.maps.Map(document.getElementById('map-contact'), {
     center: {lat: 50.420682, lng: 30.555695},
     zoom: 12,
-    scrollwheel: false,
+    scrollwheel: true,
     styles: style
-  });
+  });}
+
+  if(document.getElementById('bottom_map')){
+  map = new google.maps.Map(document.getElementById('bottom_map'), {
+    center: {lat: 50.439172, lng: 30.460447},
+    zoom: 8,
+    disableDefaultUI: true,
+    scrollwheel: false
+  });}
+
+  if(document.getElementById('main-top-map')){
+  map2 = new google.maps.Map(document.getElementById('main-top-map'), {
+    center: {lat: 50.439172, lng: 30.460447},
+    zoom: 12,
+    //disableDefaultUI: true,
+    scrollwheel: false
+  });}
 
   var markers2 = [
     {
@@ -376,22 +393,3 @@ function initMap() {
   })
 }
 // end init contact page
-
-// main page maps
-var map, map2;
-
-function initMap() {
-    map = new google.maps.Map(document.getElementById('bottom_map'), {
-      center: {lat: 50.439172, lng: 30.460447},
-      zoom: 8,
-      disableDefaultUI: true,
-      scrollwheel: false
-    });
-    map2 = new google.maps.Map(document.getElementById('main-top-map'), {
-      center: {lat: 50.439172, lng: 30.460447},
-      zoom: 12,
-      //disableDefaultUI: true,
-      scrollwheel: false
-    });
-}
-// end main page maps
