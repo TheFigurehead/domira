@@ -126,13 +126,14 @@ header .drop:hover .hidden {
 }
 
 .burger-mobile {
+	display: none;
 	background-color: $mainBlueColor;
 	width: 50px;
 	height: 50px;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	right: 10px;
+	left: 10px;
 	text-align: center;
 	font-size: 0;
 	.lines {
@@ -141,8 +142,7 @@ header .drop:hover .hidden {
 		width: 70%;
 		height: 5px;
 		background-color: #fff;
-		transform: none;
-		transition: all .5s;
+		transition: all .3s;
 		&:after, &:before {
 			content: '';
 			display: block;
@@ -150,7 +150,6 @@ header .drop:hover .hidden {
 			height: 100%;
 			background-color: #fff;
 			position: relative;
-			transform: none;
 			transition: all .5s;
 		}
 		&:before {
@@ -167,52 +166,18 @@ header .drop:hover .hidden {
 		width: 0;
 		vertical-align: middle;
 	}
-	&.active {
+	&.open {
 		.lines {
-			animation: rotateLeft .3s .3s forwards;
+			background-color: transparent;
 			&:before {
-				animation: lineBeforePosition .3s forwards, rotateRight .3s .3s forwards;
+				bottom: 0px;
+				transform: rotate(-45deg);
 			}
 			&:after {
-				animation: lineAfterPosition .3s forwards, rotateRight .3s .3s forwards;
+				top: -5px;
+				transform: rotate(45deg);
 			}
 		}
-	}
-}
-
-@keyframes lineBeforePosition {
-	0% {
-		bottom: 10px;
-	}
-	100% {
-		bottom: 0px;
-	}
-}
-
-@keyframes lineAfterPosition {
-	0% {
-		top: 5px;
-	}
-	100% {
-		top: -5px;
-	}
-}
-
-@keyframes rotateLeft {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(45deg);
-	}
-}
-
-@keyframes rotateRight {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(-90deg);
 	}
 }
 
@@ -223,7 +188,88 @@ header .drop:hover .hidden {
 }
 
 @media (max-width: 996px) {
-	header ul {
-		display: none;
+	.burger-mobile {
+		display: block;
+	}
+	header {
+		justify-content: flex-end;
+		img {
+			margin: 15px;
+		}
+	}
+	header ul:not(.hidden) {
+		display: block;
+		max-width: 50px;
+		max-height: 50px;
+		background-color: $mainBlueColor;
+		position: absolute;
+		top: calc(50% - 25px);
+		left: 10px;
+		margin: 0;
+		transition: top .2s .3s linear, max-height .3s linear, max-width .3s linear, border-radius .3s linear;
+		padding: 10px;
+		overflow: hidden;
+		a {
+			color: #fff;
+			transition: opacity .3s;
+			font-size: 15px;
+			line-height: 15px;
+			opacity: 0;
+		}
+		li {
+			padding-top: 5px;
+		}
+		.drop {
+			&:after {
+				content: none;				
+			}
+			.hidden {
+				&:before, &:after {
+					content: '';
+					display: block;
+					width: 100%;
+					height: 1px;
+					position: static;
+					background-color: darken($mainBlueColor, 5%);
+					position: relative;
+					right: 20px;
+				}
+				padding: 5px 0;
+				padding-left: 20px;
+				animation: none;
+				position: static;
+				display: block;
+				background-color: transparent;
+				li {
+					margin: 0;
+					padding-top: 5px;
+					padding-left: 0;
+					&:last-of-type {
+						padding-bottom: 5px;
+					}
+					a {
+						transition: opacity .3s;
+						line-height: 15px;
+						opacity: 0;
+					}
+				}
+			}
+		}
+		&.active {
+			transition: top .2s linear, max-height .3s linear .2s, max-width .3s linear .2s, border-radius .3s linear .2s;
+			top: calc(50% + 25px);
+			max-height: 90vh;
+			max-width: 150px;
+			border-radius: 20px;
+			border-top-left-radius: 0px;
+			a {
+				transition: opacity .3s .5s;
+				opacity: 1;
+			}
+			.drop .hidden li a {
+				transition: opacity .3s .5s;
+				opacity: 1;
+			}
+		}
 	}
 }

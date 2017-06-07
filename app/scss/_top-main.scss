@@ -119,3 +119,30 @@
   min-height: 100vh;
   height: 750px;
 }
+
+@media (max-width: 996px) {
+  .main-map-top-block {
+    display: none;
+  }
+
+  .banner-container {
+    .banner-container-half {
+      width: 100%;
+    }
+    .jk-list .jk-list-item .jk-list-item-content {
+      max-width: 500px;
+      width: auto;
+      margin-right: 50px;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .banner-container .jk-list .jk-list-item .jk-list-item-content {
+    left: 20px;
+    .jk-list-item-title .jk-list-item-title-flag {
+      position: static;
+      margin: 10px 0;
+    }
+  }
+}
