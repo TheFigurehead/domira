@@ -5,17 +5,14 @@
     min-height: 100vh;
   }
   .main-bottom-map-info-block{
-    //block appearence
     border-radius: 2px;
     background-color: rgba(0, 128, 198, 0.95);
     padding: 45px 175px 45px 45px;
     color: #fff;
-    // block positioning
     position: absolute;
     top:50%;
     right: 15%;
     transform: translateY(-50%);
-    // text formatting
     font: 700 15px "ClearSans-Regular", sans-serif;
     line-height: 21px;
     .main-bottom-map-info-block-title h2{
@@ -51,12 +48,6 @@
           list-style-type: none;
           padding: 10px 0;
         }
-        // li:first-child{
-        //   padding-top: 0;
-        // }
-        // li:last-child{
-        //   padding-bottom: 0;
-        // }
       }
     }
   }
@@ -120,5 +111,20 @@
     &:last-of-type {
       margin-bottom: 0;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-bottom-map-wrapper .main-bottom-map-info-block {
+    top: 0;
+    right: 0;
+    transform: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .main-bottom-map-wrapper .main-bottom-map-info-block {
+    position: static;
+    padding: 20px;
   }
 }

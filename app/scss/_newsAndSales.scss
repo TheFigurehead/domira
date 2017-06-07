@@ -35,6 +35,9 @@
 		}
 		.image {
 			padding-top: 0;
+			img {
+				width: 110px;
+			}
 		}
 		.content {
 			padding-left: 20px;
@@ -100,6 +103,33 @@
 		.arrow-next {
 			border-top-right-radius: 20px;
 			border-bottom-right-radius: 20px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.news-and-sales {
+		background: none;
+		.col-50 {
+	    width: 100%;
+		}
+		.news {
+			background-color: #fff;
+		}
+		.sales {
+			background-color: rgba(0,133,200,1);
+		}
+	}
+}
+
+@media (max-width: 520px) {
+	.news-and-sales {
+		.container {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.news-item .image {
+			display: none;
 		}
 	}
 }

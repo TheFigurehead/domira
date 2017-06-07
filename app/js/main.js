@@ -11,8 +11,6 @@ $(document).ready(function() {
         relativeWidth = 1059,
         relativeHeight = 424;
 
-
-
         jkCanvas.width = width;
         jkCanvas.height = height;
 
@@ -81,6 +79,8 @@ $(document).ready(function() {
 
 	var header = $('header');
 
+  var mobileMenuNav = $('header > ul');
+
 	var headerHeight = $(header).height(),
 	scrolling = false,
 	previousTop = 0,
@@ -101,6 +101,9 @@ $(document).ready(function() {
 		} else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
 			$(header).addClass('is-hidden');
 		}
+
+    $('.burger-mobile').removeClass('open');
+    mobileMenuNav.removeClass('active');
 
 		previousTop = currentTop;
 		scrolling = false;
@@ -144,20 +147,22 @@ $(document).ready(function() {
     /****************/
     //Domira hoverOpacity
     /***************/
-        $('header ul li a').hover(
+    if (!window.matchMedia( "(max-width: 996px)" ).matches) {
+      $('header ul li a').hover(
         function()  {
-            $('header ul li a').addClass('opacity');
-            $(this).addClass('opacity-hide');
+          $('header ul li a').addClass('opacity');
+          $(this).addClass('opacity-hide');
         },
         function()  {
-            $(this).removeClass('opacity-hide');
+          $(this).removeClass('opacity-hide');
         }
-    )
+      )
 
-        $("header ul li").on("click", "a", function(){
-    $("header ul li a").removeClass("mark");
-    $(this).addClass("mark");
-    });
+      $("header ul li").on("click", "a", function(){
+        $("header ul li a").removeClass("mark");
+        $(this).addClass("mark");
+      });
+    }
 
     /****************/
     //End Domira hoverOpacity
@@ -221,8 +226,10 @@ $(document).ready(function() {
     /*******************/
 
     // mobile menu
+
     $('.burger-mobile').on('click', function() {
-        $(this).toggleClass('active');
+        $(this).toggleClass('open');
+        mobileMenuNav.toggleClass('active');
     })
     // end mobile menu
 
