@@ -18,6 +18,7 @@
     height: 750px;
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
     .jk-list-track {
       position: relative;
       transition: top .3s;
@@ -115,6 +116,6 @@
   }
 }
 .main-map-top-block{
-  max-height: 100%;
+  min-height: 100vh;
   height: 750px;
 }
