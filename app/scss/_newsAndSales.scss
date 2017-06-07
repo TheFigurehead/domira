@@ -1,6 +1,7 @@
 .news-and-sales {
 	background-color: rgba(255,255,255,1);
 	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(0,133,200,1) 50%, rgba(0,133,200,1) 100%);
+	min-height: 100vh;
 	h3 {
 		margin: 0;
 		font-family: "ClearSans-Bold";
@@ -31,6 +32,34 @@
 	.news-item {
 		.content, .image {
 			padding: 30px 0;
+		}
+		.image {
+			padding-top: 0;
+		}
+		.content {
+			padding-left: 20px;
+			a {
+				color: $mainBlueColor;
+				font-size: 20px;
+			}
+		}
+		.date {
+			color: #989b9c;
+			margin-top: 20px;
+			&:before {
+				content: '';
+				display: inline-block;
+				background-image: url('../img/calendar.png');
+				background-repeat: no-repeat;
+				width: 10px;
+				height: 11px;
+				margin-right: 10px;
+			}
+		}
+		&:not(:last-of-type) {
+			td {
+				border-bottom: dotted 2px #eee;
+			}
 		}		
 	}
 	.sales {

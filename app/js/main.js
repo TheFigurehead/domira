@@ -1,7 +1,79 @@
 $(document).ready(function() {
 
+    var jkCanvas = document.getElementById('jk');
+
+    if (jkCanvas) {
+        var ctx = jkCanvas.getContext('2d'),
+        pic = document.getElementsByClassName('canvas-img')[0],
+        width = pic.width,
+        height = pic.height,
+        mouseX, mouseY,
+        relativeWidth = 1059,
+        relativeHeight = 424;
+        
 
 
+        jkCanvas.width = width;
+        jkCanvas.height = height;
+
+        drawCanvas();
+        jkCanvas.addEventListener('mousemove', updateCanvas, false);
+
+        function drawCanvas() {
+            drawRoom([0, 351], [0, 313], [565, 318], [relativeWidth, 323], [relativeWidth, 372], [594, 380], [0, 351], {r: 255, g: 0, b: 0});
+            drawRoom([0, 313], [565, 318], [relativeWidth, 323], [relativeWidth, 275], [596, 259], [0, 277], [0, 313], {r: 0, g: 255, b: 0});
+            drawRoom([0, 277], [596, 259], [relativeWidth, 275], [relativeWidth, 225], [604, 189], [0, 241], [0, 277], {r: 0, g: 0, b: 255});
+            drawRoom([0, 241], [604, 189], [relativeWidth, 225], [relativeWidth, 171], [609, 126], [0, 203], [0, 241], {r: 255, g: 0, b: 0});
+        }
+
+        function drawRoom() {
+            var color = arguments[arguments.length - 1];
+
+            ctx.beginPath();
+            ctx.fillStyle = 'rgba(0,0,0,.0)';
+            ctx.moveTo(arguments[0][0] / relativeHeight * height, arguments[0][1] / relativeWidth * width);
+
+            for (var i = 1; i < arguments.length - 1; i++)
+                ctx.lineTo(arguments[i][0] / relativeHeight * height, arguments[i][1] / relativeWidth * width);
+
+            if (ctx.isPointInPath(mouseX, mouseY))
+                ctx.fillStyle = 'rgba('+ color.r + ', '+ color.g + ', ' + color.b + ', .3)';
+
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(0,0,0,.0)';
+            ctx.lineWidth = 2;
+            ctx.moveTo(arguments[0][0] / relativeHeight * height, arguments[0][1] / relativeWidth * width);
+
+            for (var i = 1; i < arguments.length; i++)
+                ctx.lineTo(arguments[i][0] / relativeHeight * height, arguments[i][1] / relativeWidth * width);
+
+            if (ctx.isPointInPath(mouseX, mouseY))
+                ctx.strokeStyle = 'rgba('+ color.r + ', '+ color.g + ', ' + color.b + ', .9)';
+
+            ctx.stroke();
+        }
+
+        function updateCanvas(e){
+            var pos = findOffset(jkCanvas);
+
+            mouseX = e.pageX - pos.x;
+            mouseY = e.pageY - pos.y;
+
+            ctx.clearRect(0, 0 , width, height);
+            drawCanvas();
+        }
+
+        function findOffset(obj) {
+            var curX = curY = 0;
+            if (obj.offsetParent) {
+                do {
+                    curX += obj.offsetLeft;
+                    curY += obj.offsetTop;
+                } while (obj = obj.offsetParent);
+                return {x:curX,y:curY};
+            }
+        }
+    }
 
     /****************/
     //Domira autoHideHeader
@@ -148,69 +220,12 @@ $(document).ready(function() {
     //End DomiraTV Engine
     /*******************/
 
-    /********************/
-    //Start sidebar menu
-    /*******************/
-
-    $('.bar-wrapper').click(function() {
-
-          $('.mobile-head-wrapper').toggleClass('open');
-          $('.bar-wrapper').toggleClass('open');
-          $('body').toggleClass('open');
-
-          //OVERLAY
-          $('.overlay').toggleClass('open')
-          if($('.overlay').hasClass('open')){
-            $('.overlay').show();
-          }else{
-            $('.overlay').hide();
-          }
-
-          //BURGER
-           if ($('.nav-icon').attr('id')) {
-             $('.nav-icon').removeAttr('id');
-           } else {
-            $('.nav-icon').attr('id', 'openBurger');
-          }
-
-    });
-
-    $('.overlay').click(function() {
-      $(this).removeClass('open').hide();
-      $('.mobile-head-wrapper').removeClass('open');
-      $('.bar-wrapper').removeClass('open');
-      $('body').removeClass('open');
-      $('.nav-icon').removeAttr('id');
-    });
-    /********************/
-    //End sidebar menu
-    /*******************/
-
-    /********************/
-    //SWIPE
-    /*******************/
-
-  //   $(".swipe-area").swipe({
-  //   swipeStatus:function(event, phase, direction, distance, duration, fingers)
-  //       {
-  //           if (phase=="move" && direction =="right") {
-  //               console.log('swipe');
-  //                $('header').addClass('open');
-  //                $('.nav-icon').attr('id', 'openBurger');
-  //
-  //               return false;
-  //            }
-  //           if (phase=="move" && direction =="left") {
-  //                 $('.nav-icon').removeAttr('id');
-  //                 $('header').removeClass('open');
-  //                 return false;
-  //           }
-  //       }
-  // });
-
-  /********************/
-  //END SWIPE
-  /*******************/
+    // mobile menu
+    $('.burger-mobile').on('click', function() {
+        $(this).toggleClass('active');
+    })
+    // end mobile menu
+    
 // ---------------
 // ***planning tabulation****
 // ---------------
@@ -373,17 +388,17 @@ function initMap() {
   var markers2 = [
     {
       position: {lat: 50.411994, lng: 30.436709},
-      map: map2,
+      map: map_con,
       icon: 'img/otdel_1.png'
     },
     {
       position: {lat: 50.439172, lng: 30.460447},
-      map: map2,
+      map: map_con,
       icon: 'img/main_office.png'
     },
     {
       position: {lat: 50.420682, lng: 30.555695},
-      map: map2,
+      map: map_con,
       icon: 'img/otdel_2.png'
     }
   ];
