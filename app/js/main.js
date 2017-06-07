@@ -225,6 +225,7 @@ $(document).ready(function() {
         $(this).toggleClass('active');
     })
     // end mobile menu
+
 // ---------------
 // ***planning tabulation****
 // ---------------
@@ -387,17 +388,17 @@ function initMap() {
   var markers2 = [
     {
       position: {lat: 50.411994, lng: 30.436709},
-      map: map2,
+      map: map_con,
       icon: 'img/otdel_1.png'
     },
     {
       position: {lat: 50.439172, lng: 30.460447},
-      map: map2,
+      map: map_con,
       icon: 'img/main_office.png'
     },
     {
       position: {lat: 50.420682, lng: 30.555695},
-      map: map2,
+      map: map_con,
       icon: 'img/otdel_2.png'
     }
   ];
