@@ -21,7 +21,7 @@ $mainBlueColor: #0080c6;
 body {
 	margin: 0;
   background-color: #f2f7f8;
-  padding-top: 111px;
+  padding-top: 91px;
   font-family: "ClearSans-Regular", sans-serif;
   font-size: 14px;
   position: relative;
@@ -61,3 +61,4 @@ main {
 @import "top-main";
 @import "newsAndSales";
 @import "apartmentDomira";
+@import "location";
