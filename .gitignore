@@ -1,5 +1,5 @@
 app/img/Thumbs.db
 node_modules
-dist
+/dist
 app/js/libs.min.js
 app/css/style.css

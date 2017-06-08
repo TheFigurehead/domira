@@ -26,15 +26,21 @@
       font-size: 15px;
       font-weight: 400;
     }
-    .main-bottom-map-info-block-content .main-bottom-map-info-block-content-number{
-      font-size: 16px;
-      line-height: 20px;
-      font-weight: 700;
+    .main-bottom-map-info-block-content .main-bottom-map-info-block-content-number {
+      &, & a, a {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 700;
+        text-decoration: none;
+      }
     }
-    .main-bottom-map-info-block-content .main-bottom-map-info-block-content-email{
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 24px;
+    .main-bottom-map-info-block-content .main-bottom-map-info-block-content-email {
+      &, & a, a {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
+        text-decoration: none;
+      }
     }
     .main-bottom-map-social-block{
       position: absolute;
@@ -124,7 +130,7 @@
 
 @media (max-width: 520px) {
   .main-bottom-map-wrapper .main-bottom-map-info-block {
-    position: static;
+    position: relative;
     padding: 20px;
   }
 }

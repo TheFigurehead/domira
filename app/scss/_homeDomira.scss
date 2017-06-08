@@ -43,8 +43,7 @@ main .wrapper .container .layout .active {
 	display: inline-block;
 }
 
-main .wrapper .container .layout ul li:hover a,
-main .wrapper .container .layout ul li:active a,
+
 main .wrapper .container .layout .active_li a, {
 	color: #323438;
 	font-size: 18px;
@@ -65,7 +64,6 @@ main .wrapper .container .layout ul li::after {
   display: none;
 }
 
-main .wrapper .container .layout li:hover::after,
 main .wrapper .container .layout .active_li:after {
 	display: block;
 }
@@ -116,29 +114,45 @@ main .wrapper .container .layout .page-title h3 {
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: 50% 50%;
-		width: 40%;
+		width: 45%;
 	}
 	&__text {
-		width: 60%;
+		width: 55%;
 		position: relative;
 		background-color: #3b3f4d;
 		color: #fff;
 		background-image: url('../img/background-image-block.png');
 		background-repeat: no-repeat;
-		background-position: -50% -50%;
+		background-position: -150px -150px;
 		.content-wrapper {
 			position: absolute;
 			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+			left: 10%;
+			transform: translateY(-50%);
 			width: 60%;
 			font-size: 15px;
 			h2 {
 				text-transform: uppercase;
 				font-family: "ClearSans-Bold";
-				font-size: 34px;
+				font-size: 40px;
 			}
 		}
+	}
+}
+
+@media (any-hover: hover) {
+	main .wrapper .container .layout ul li:hover a,
+	main .wrapper .container .layout ul li:active a {
+		color: #323438;
+		font-size: 18px;
+		font-weight: 700;
+		text-transform: uppercase;
+		border-bottom: none;
+		transition: all 0.2s;
+	}
+
+	main .wrapper .container .layout li:hover::after {
+		display: block;
 	}
 }
 
