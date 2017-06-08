@@ -191,7 +191,7 @@ img.thumbnail {
 .breadcrumbs ul {
   margin: 20px 0;
   text-align: left;
-  padding-left: 200px; }
+  padding-left: 0px; }
   .breadcrumbs ul li {
     font-size: 15px;
     font-weight: 400;
