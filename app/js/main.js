@@ -88,10 +88,13 @@ $(document).ready(function() {
 	scrollDelta = 10,
 	scrollOffset = 150;
 
-    var timeoutHeader = setTimeout(function(){
-        if ($(window).scrollTop() >= 112)
-            $('header').addClass('is-hidden');
-    }, 2000);
+    if (!window.matchMedia( "(max-width: 996px)" ).matches) {
+        var timeoutHeader = setTimeout(function(){
+            if ($(window).scrollTop() >= 112)
+                $('header').addClass('is-hidden');
+        }, 2000);
+    }
+    
 
 	function autoHideHeader() {
 		var currentTop = $(window).scrollTop();
@@ -111,11 +114,14 @@ $(document).ready(function() {
 
 
 	$(window).on('scroll', function() {
-        clearTimeout( timeoutHeader );
-        timeoutHeader = setTimeout(function(){
-            if ($(window).scrollTop() >= 112)
-                $('header').addClass('is-hidden');
-        }, 2000);
+        if (!window.matchMedia( "(max-width: 996px)" ).matches) {
+            clearTimeout( timeoutHeader );
+            timeoutHeader = setTimeout(function(){
+                if ($(window).scrollTop() >= 112)
+                    $('header').addClass('is-hidden');
+            }, 2000);
+        }
+        
 		var scrollTop = $(this).scrollTop();
 
 		if( !scrolling ) {
@@ -128,17 +134,20 @@ $(document).ready(function() {
 		}
 	})
 
-    $('header').hover(
-        function (){
-            clearTimeout(timeoutHeader);
-        }, function() {
-            timeoutHeader = setTimeout(function(){
-                if ($(window).scrollTop() >= 112)
-                    $('header').addClass('is-hidden');
-            }, 2000);
-            $('header ul li a').removeClass('opacity');
-        }
-    )
+    if (!window.matchMedia( "(max-width: 996px)" ).matches) {
+        $('header').hover(
+            function (){
+                clearTimeout(timeoutHeader);
+            }, function() {
+                timeoutHeader = setTimeout(function(){
+                    if ($(window).scrollTop() >= 112) {
+                        $('header').addClass('is-hidden');
+                    }
+                }, 2000);
+                $('header ul li a').removeClass('opacity');
+            }
+        )
+    }
 
     /****************/
     //End Domira autoHideHeader
@@ -236,19 +245,24 @@ $(document).ready(function() {
 // ---------------
 // ***planning tabulation****
 // ---------------
-    $('main .container .planing-title li').eq(0).addClass("active_li");
-    $('main .container .planing-content a').eq(0).addClass("active");
-  $('main .container .planing-title li').click(function(){
-    if(!$(this).hasClass( "active_li" )) {
-      var index = $(this).index();
-      $('.planing-title li').removeClass("active_li");
-      $(this).addClass("active_li");
-      $('main .container .planing-content a.active').removeClass("active");
-      $('main .container .planing-content a').eq(index).addClass("active");
-      return false;
-    }
+  var tabsLi = $('main .container .planing-title li'),
+  tabsLinks = $('main .container .planing-content a'),
+  tabButton = $('.top5-planing .button');
+
+  tabsLi.on('click', function(event) {
+    event.preventDefault();
+    var activeLink = tabsLinks.eq($(this).index());
+
+    tabsLi.removeClass('active_li');
+    $(this).addClass('active_li');
+
+    tabsLinks.removeClass('active');
+    activeLink.addClass('active');
+
+    tabButton.attr('href', activeLink.attr('href'));
   });
 
+  tabsLi.eq(0).trigger('click')
 // ---------------
 // ***End  planning tabulation****
 // ---------------
@@ -356,11 +370,6 @@ function callPlayer(frame_id, func, args) {
             "id": frame_id,
         }), "*");
     }
-}
-
-
-if (window.innerWidth < 768){
-  console.log("work");
 }
 
 // init map contact page
