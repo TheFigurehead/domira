@@ -1378,7 +1378,8 @@ main .wrapper .container .layout .page-title h3 {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     font: 700 15px "ClearSans-Regular", sans-serif;
-    line-height: 21px; }
+    line-height: 21px;
+    z-index: 1; }
     .main-bottom-map-wrapper .main-bottom-map-info-block .main-bottom-map-info-block-title h2 {
       font-size: 28px;
       font-weight: 700;
