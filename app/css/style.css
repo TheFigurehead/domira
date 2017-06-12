@@ -1198,11 +1198,18 @@ header .drop:hover .hidden {
     background-size: cover;
     background-attachment: fixed; } }
 
+@media screen and (max-width: 991px) {
+  .item iframe {
+    text-align: center; } }
+
 main .wrapper .container .layout .button {
   float: none;
   background-color: #0080c6;
   color: #fff;
   margin: 0 auto; }
+  main .wrapper .container .layout .button:hover {
+    background-color: #6db6dc;
+    color: #fff; }
 
 main .wrapper .container .layout ul {
   padding: 0;
@@ -1618,6 +1625,9 @@ main .wrapper .container .layout .page-title h3 {
     border-radius: 16px;
     float: right;
     margin: 10px 10px 0; }
+    .news-and-sales .all-news:hover {
+      background-color: #6db6dc;
+      color: #fff; }
   .news-and-sales .col-50 {
     width: 50%;
     float: left;
@@ -1632,7 +1642,37 @@ main .wrapper .container .layout .page-title h3 {
     padding-left: 20px; }
     .news-and-sales .news-item .content a {
       color: #0080c6;
-      font-size: 20px; }
+      font-size: 20px;
+      display: inline-block;
+      position: relative;
+      text-decoration: none; }
+    .news-and-sales .news-item .content a:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      transition: width 0s ease, background .5s ease; }
+    .news-and-sales .news-item .content a:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: #0080c6;
+      transition: width .5s ease; }
+    .news-and-sales .news-item .content a:hover:before {
+      width: 100%;
+      background: #0080c6;
+      transition: width .5s ease; }
+    .news-and-sales .news-item .content a:hover:after {
+      width: 100%;
+      background: transparent;
+      transition: all 0s ease; }
   .news-and-sales .news-item .date {
     color: #989b9c;
     margin-top: 20px; }
@@ -1864,6 +1904,10 @@ main .container .main_content_apartment .info_content_apartment .model .number_o
   font-family: "ClearSans-Bold";
   font-size: 14px;
   text-transform: uppercase; }
+
+@media screen and (max-width: 991px) {
+  .item-video {
+    text-align: center; } }
 
 #location .canvas {
   position: relative;
