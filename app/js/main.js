@@ -323,22 +323,71 @@ $(document).ready(function() {
             item.lng = +slides[i].dataset.lng;
             if (item)
                 markersForTopMap.push(item);
-        }
-
+        }        
+        
         markersForTopMap.forEach(function(item, i) {
+            var image = {
+                url: slides[i].dataset.icon,
+                // This marker is 20 pixels wide by 32 pixels high.
+                scaledSize: new google.maps.Size(50, 50),
+                // The origin for this image is (0, 0).
+                origin: new google.maps.Point(0, 0),
+                // The anchor for this image is the base of the flagpole at (0, 32).
+                anchor: new google.maps.Point(0, 32)
+            };
+            
             var markerData = {};
             markerData.position = item;
-            markerData.map = map2;
-            markerData.icon = slides[i].dataset.icon;
-            console.log(markerData);
+            markerData.map = map2;            
+            markerData.icon = image;
+            //console.log(markerData);
             var marker = new google.maps.Marker(markerData);
-        });
+            
+            google.maps.event.addListener(marker, 'mouseover', function() {
+                console.log('Mouseover'+marker+" "+i);
+                image.scaledSize = new google.maps.Size(250, 250)
+                marker.setIcon(image);
+                //this.setScaledSize(250,250);
+    
+                console.log(this.icon.scaledSize);
+            });
+            google.maps.event.addListener(marker, 'mouseout', function() {
+                console.log('Mouseout'+marker+" "+i);
+                
+                image.scaledSize = new google.maps.Size(50, 50)
+                marker.setIcon(image);
+                
+                console.log(this.icon.scaledSize);
+            });
+            
+          
 
+            map2.addListener('zoom_changed', function() {
+                var zoomLvl = map2.getZoom();
+                
+                if(zoomLvl >= 17){
+                    console.log("ZAZ");
+                    image.scaledSize = new google.maps.Size(250, 250)
+                    marker.setIcon(image);
+                }
+                else if(zoomLvl < 17){
+                    image.scaledSize = new google.maps.Size(50, 50)
+                    marker.setIcon(image);
+                } 
+            });
+            
+        });
+        
+        
+        //console.log(map.getZoom());
+        
+        
+        
         slides.on('click', function() {
             var center = markersForTopMap[slides.index(this)];
             map2.setOptions({
                 zoom: 15,
-                center: center
+                center: center,
             })
         })
         // end main page maps
@@ -397,8 +446,8 @@ function initMap() {
 
   if(document.getElementById('main-top-map')){
   map2 = new google.maps.Map(document.getElementById('main-top-map'), {
-    center: {lat: 50.439172, lng: 30.460447},
-    zoom: 12,
+    center: {lat: 50.3391000, lng: 30.640447},
+    zoom: 11,
     //disableDefaultUI: true,
     scrollwheel: false
   });}
