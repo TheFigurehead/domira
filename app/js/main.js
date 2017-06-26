@@ -438,8 +438,8 @@ function initMap() {
 
   if(document.getElementById('bottom_map')){
   map = new google.maps.Map(document.getElementById('bottom_map'), {
-    center: {lat: 50.439172, lng: 30.460447},
-    zoom: 8,
+    center: {lat: 50.460000, lng: 30.550447},
+    zoom: 12,
     disableDefaultUI: true,
     scrollwheel: false
   });}
@@ -452,26 +452,45 @@ function initMap() {
     scrollwheel: false
   });}
 
-//  var markers2 = [
-//    {
-//      position: {lat: 50.411994, lng: 30.436709},
-//      map: map2,
-//      icon: 'img/domira-map-markers/1.png'
-//    },
-//    {
-//      position: {lat: 50.439172, lng: 30.460447},
-//      map: map2,
-//      icon: 'img/domira-map-markers/2.png'
-//    },
-//    {
-//      position: {lat: 50.420682, lng: 30.555695},
-//      map: map2,
-//      icon: 'img/domira-map-markers/3.png'
-//    }
-//  ];
-//
-//  markers2.forEach(function(item, i, arr) {
-//    var marker = new google.maps.Marker(item);
-//  })
+ var markers2 = [
+    {
+        position: {lat: 50.458477, lng: 30.395234},
+        map: map,
+        icon: {
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Главный офис.png',
+            size: new google.maps.Size(138, 34),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(0, 34),
+            scaledSize: new google.maps.Size(138, 34)
+        }
+    },
+    {
+        position: {lat: 50.431427, lng: 30.369156},
+        map: map,
+        icon: {
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Отдел продаж №1.png',
+            size: new google.maps.Size(161, 34),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(0, 34),
+            scaledSize: new google.maps.Size(161, 34)
+        }
+ 
+    },
+    {
+        position: {lat: 50.440455, lng: 30.487595},
+        map: map,
+        icon: {
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Отдел продаж №2.png',
+            size: new google.maps.Size(161, 34),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(0, 34),
+            scaledSize: new google.maps.Size(161, 34)
+        }
+    }
+ ];
+
+ markers2.forEach(function(item, i, arr) {
+   var marker = new google.maps.Marker(item);
+ })
 }
 // end init contact page
