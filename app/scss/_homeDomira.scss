@@ -3,6 +3,11 @@ main .wrapper .container .layout .button {
 	background-color: #0080c6;
 	color: #fff;
 	margin: 0 auto;
+    
+    &:hover{
+        background-color: rgb(109, 182, 220);
+	    color: #fff;
+    }
 }
 
 main .wrapper .container .layout ul {
