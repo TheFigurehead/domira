@@ -343,22 +343,22 @@ $(document).ready(function() {
             //console.log(markerData);
             var marker = new google.maps.Marker(markerData);
             
-            google.maps.event.addListener(marker, 'mouseover', function() {
-                console.log('Mouseover'+marker+" "+i);
-                image.scaledSize = new google.maps.Size(250, 250)
-                marker.setIcon(image);
-                //this.setScaledSize(250,250);
-    
-                console.log(this.icon.scaledSize);
-            });
-            google.maps.event.addListener(marker, 'mouseout', function() {
-                console.log('Mouseout'+marker+" "+i);
-                
-                image.scaledSize = new google.maps.Size(50, 50)
-                marker.setIcon(image);
-                
-                console.log(this.icon.scaledSize);
-            });
+//            google.maps.event.addListener(marker, 'mouseover', function() {
+//                console.log('Mouseover'+marker+" "+i);
+//                image.scaledSize = new google.maps.Size(250, 250)
+//                marker.setIcon(image);
+//                //this.setScaledSize(250,250);
+//    
+//                console.log(this.icon.scaledSize);
+//            });
+//            google.maps.event.addListener(marker, 'mouseout', function() {
+//                console.log('Mouseout'+marker+" "+i);
+//                
+//                image.scaledSize = new google.maps.Size(50, 50)
+//                marker.setIcon(image);
+//                
+//                console.log(this.icon.scaledSize);
+//            });
             
           
 
