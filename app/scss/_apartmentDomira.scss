@@ -187,3 +187,10 @@ main .container .main_content_apartment .info_content_apartment .model .number_o
 	font-size: 14px;
 	text-transform: uppercase;
 }
+
+@media screen and(max-width: 991px){
+    .item-video{
+        text-align: center;
+        
+    }
+}
