@@ -462,6 +462,10 @@ function initMap() {
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 34),
             scaledSize: new google.maps.Size(138, 34)
+        },
+        content: {
+            name: 'Главный офис компании',
+            phones: ['+7 (495) 111-11-11', '+7 (495) 111-11-11']
         }
     },
     {
@@ -473,8 +477,11 @@ function initMap() {
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 34),
             scaledSize: new google.maps.Size(161, 34)
+        },
+        content: {
+            name: 'Отдел продаж №1',
+            phones: ['+7 (495) 222-22-22', '+7 (495) 222-22-22']
         }
- 
     },
     {
         position: {lat: 50.440455, lng: 30.487595},
@@ -485,12 +492,28 @@ function initMap() {
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 34),
             scaledSize: new google.maps.Size(161, 34)
+        },
+        content: {
+            name: 'Отдел продаж №1',
+            phones: ['+7 (495) 333-33-33', '+7 (495) 333-33-33']
         }
     }
  ];
 
  markers2.forEach(function(item, i, arr) {
-   var marker = new google.maps.Marker(item);
+   var marker = new google.maps.Marker(item),
+   innerBlock = $('.main-bottom-map-info-block-content').eq(0);
+
+   marker.addListener('click', function() {
+    map.panTo({lat: item.position.lat, lng: item.position.lng + 0.05});
+
+    innerBlock.children().remove();
+
+    innerBlock.append($('<h3>' + item.content.name + ':</h3>'));
+
+    for (var i = 0; i < item.content.phones.length; i++)
+        innerBlock.append($('<div class="main-bottom-map-info-block-content-number"><span>' + item.content.phones[i] + '</span></div>'));
+   })
  })
 }
 // end init contact page
