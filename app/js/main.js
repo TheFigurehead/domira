@@ -437,7 +437,9 @@ function initMap() {
   });}
 
   if(document.getElementById('bottom_map')){
-  map = new google.maps.Map(document.getElementById('bottom_map'), {
+    var bottomMap = document.getElementById('bottom_map')
+
+  map = new google.maps.Map(bottomMap, {
     center: {lat: 50.460000, lng: 30.550447},
     zoom: 12,
     disableDefaultUI: true,
@@ -452,6 +454,8 @@ function initMap() {
     scrollwheel: false
   });}
 
+  console.log(bottomMap.dataset.mainoficePhones)
+
  var markers2 = [
     {
         position: {lat: 50.458477, lng: 30.395234},
@@ -465,7 +469,7 @@ function initMap() {
         },
         content: {
             name: 'Главный офис компании',
-            phones: ['+7 (495) 111-11-11', '+7 (495) 111-11-11']
+            phones: eval(bottomMap.dataset.mainoficePhones)
         }
     },
     {
@@ -480,7 +484,7 @@ function initMap() {
         },
         content: {
             name: 'Отдел продаж №1',
-            phones: ['+7 (495) 222-22-22', '+7 (495) 222-22-22']
+            phones: eval(bottomMap.dataset.sales1Phones)
         }
     },
     {
@@ -495,7 +499,7 @@ function initMap() {
         },
         content: {
             name: 'Отдел продаж №1',
-            phones: ['+7 (495) 333-33-33', '+7 (495) 333-33-33']
+            phones: eval(bottomMap.dataset.sales2Phones)
         }
     }
  ];
