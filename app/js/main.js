@@ -440,9 +440,9 @@ function initMap() {
     var bottomMap = document.getElementById('bottom_map')
 
   map = new google.maps.Map(bottomMap, {
-    center: {lat: 50.460000, lng: 30.550447},
-    zoom: 12,
-    disableDefaultUI: true,
+    center: {lat: 50.487818, lng: 30.507593},
+    zoom: 11,
+    //disableDefaultUI: true,
     scrollwheel: false
   });}
 
@@ -454,69 +454,95 @@ function initMap() {
     scrollwheel: false
   });}
 
-  console.log(bottomMap.dataset.mainoficePhones)
-
  var markers2 = [
     {
-        position: {lat: 50.458477, lng: 30.395234},
+        position: {lat: 50.511042, lng: 30.225907},
         map: map,
         icon: {
-            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Главный офис.png',
-            size: new google.maps.Size(138, 34),
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Главный офис син.png',
+            size: new google.maps.Size(206, 53),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(0, 34),
-            scaledSize: new google.maps.Size(138, 34)
+            anchor: new google.maps.Point(0, 53),
+            scaledSize: new google.maps.Size(206, 53)
         },
-        content: {
-            name: 'Главный офис компании',
-            phones: eval(bottomMap.dataset.mainoficePhones)
-        }
+        content: JSON.parse(bottomMap.dataset.mainOfice)
     },
     {
-        position: {lat: 50.431427, lng: 30.369156},
+        position: {lat: 50.381233, lng: 30.792130},
         map: map,
         icon: {
-            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Отдел продаж №1.png',
-            size: new google.maps.Size(161, 34),
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Контакты ЖК 7’Я.png',
+            size: new google.maps.Size(131, 53),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(0, 34),
-            scaledSize: new google.maps.Size(161, 34)
+            anchor: new google.maps.Point(0, 53),
+            scaledSize: new google.maps.Size(131, 53)
         },
-        content: {
-            name: 'Отдел продаж №1',
-            phones: eval(bottomMap.dataset.sales1Phones)
-        }
+        content: JSON.parse(bottomMap.dataset.jk7ya)
     },
     {
-        position: {lat: 50.440455, lng: 30.487595},
+        position: {lat: 50.513212, lng: 30.226813},
         map: map,
         icon: {
-            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Отдел продаж №2.png',
-            size: new google.maps.Size(161, 34),
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Контакты ЖК Мюнхаузен.png',
+            size: new google.maps.Size(212, 53),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(0, 34),
-            scaledSize: new google.maps.Size(161, 34)
+            anchor: new google.maps.Point(0, 106),
+            scaledSize: new google.maps.Size(212, 53)
         },
-        content: {
-            name: 'Отдел продаж №1',
-            phones: eval(bottomMap.dataset.sales2Phones)
-        }
+        content: JSON.parse(bottomMap.dataset.jkmun)
+    },
+     {
+        position: {lat: 50.511042, lng: 30.225907},
+        map: map,
+        icon: {
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Контакты Домик на Пушкинской.png',
+            size: new google.maps.Size(285, 53),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(286, 53),
+            scaledSize: new google.maps.Size(285, 53)
+        },
+        content: JSON.parse(bottomMap.dataset.jkdom)
     }
  ];
 
+    function offsetCenter(map, latlng, offsetx, offsety) {
+        var scale = Math.pow(2, map.getZoom());
+
+        var worldCoordinateCenter = map.getProjection().fromLatLngToPoint(latlng);
+        var pixelOffset = new google.maps.Point((offsetx/scale) || 0,(offsety/scale) ||0);
+
+        var worldCoordinateNewCenter = new google.maps.Point(
+            worldCoordinateCenter.x - pixelOffset.x,
+            worldCoordinateCenter.y + pixelOffset.y
+        );
+
+        var newCenter = map.getProjection().fromPointToLatLng(worldCoordinateNewCenter);
+
+        map.panTo(newCenter);
+    }
+
  markers2.forEach(function(item, i, arr) {
    var marker = new google.maps.Marker(item),
-   innerBlock = $('.main-bottom-map-info-block-content').eq(0);
+   innerBlock = $('.main-bottom-map-info-block-content');
 
    marker.addListener('click', function() {
-    map.panTo({lat: item.position.lat, lng: item.position.lng + 0.05});
+    offsetCenter(map, marker.getPosition(), -$(window).width() / 4, 0);
 
-    innerBlock.children().remove();
+    innerBlock.empty();
 
-    innerBlock.append($('<h3>' + item.content.name + ':</h3>'));
-
-    for (var i = 0; i < item.content.phones.length; i++)
-        innerBlock.append($('<div class="main-bottom-map-info-block-content-number"><span>' + item.content.phones[i] + '</span></div>'));
+    for (var i = 0; i < item.content.length; i++) 
+        for (var key in item.content[i]) {
+            if (key == 'name') innerBlock.append($('<h3>' + item.content[i][key] + ':</h3>'));
+            else if (key == 'number') 
+                for (var j = 0; j < item.content[i][key].length; j++)
+                    innerBlock.append($('<div class="main-bottom-map-info-block-content-number"><span>' + item.content[i][key][j] + '</span></div>'));
+            else if (key == 'mail') 
+                for (var j = 0; j < item.content[i][key].length; j++)
+                    innerBlock.append($('<div class="main-bottom-map-info-block-content-email"><span>' + item.content[i][key][j] + '</span></div>'));
+            else if (key == 'text') 
+                for (var j = 0; j < item.content[i][key].length; j++)
+                    innerBlock.append(item.content[i][key][j] + '<br />');
+        }
    })
  })
 }
