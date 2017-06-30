@@ -1569,16 +1569,23 @@ main .wrapper .container .layout .page-title h3 {
       width: 30px;
       height: 40px;
       margin: 5px auto;
-      background-color: #0070ae;
+      background-color: #fff;
+      color: #0070ae;
       background-position: center center;
       background-repeat: no-repeat; }
       .banner-container .jk-list .jk-list-nav .jk-list-nav-item:hover {
         cursor: pointer;
-        background-color: #00669f; }
-    .banner-container .jk-list .jk-list-nav .up {
-      background-image: url("../img/nav-up.png"); }
-    .banner-container .jk-list .jk-list-nav .down {
-      background-image: url("../img/nav-down.png"); }
+        background-color: #0070ae;
+        color: #fff; }
+    .banner-container .jk-list .jk-list-nav .up, .banner-container .jk-list .jk-list-nav .down {
+      position: relative; }
+      .banner-container .jk-list .jk-list-nav .up div, .banner-container .jk-list .jk-list-nav .down div {
+        font-size: 15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%) scale(0.9, 0.5);
+                transform: translate(-50%, -50%) scale(0.9, 0.5); }
 
 .main-map-top-block {
   min-height: 100vh;
@@ -1687,14 +1694,15 @@ main .wrapper .container .layout .page-title h3 {
     color: #fff; }
   .news-and-sales .sales .arrow-prev, .news-and-sales .sales .arrow-next {
     float: right;
-    color: #fff;
-    background-color: #0072b0;
+    color: #0072b0;
+    background-color: #fff;
     padding: 10px 20px;
     margin-right: 3px;
     margin-top: 10px;
     cursor: pointer; }
     .news-and-sales .sales .arrow-prev:hover, .news-and-sales .sales .arrow-next:hover {
-      background-color: #00517d; }
+      background-color: #0072b0;
+      color: #fff; }
   .news-and-sales .sales h5 a {
     color: #f4fbff;
     font-family: "ClearSans-Bold";

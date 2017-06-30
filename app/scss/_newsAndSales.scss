@@ -47,44 +47,41 @@
 			a {
 				color: $mainBlueColor;
 				font-size: 20px;
-                display: inline-block;
-                position: relative;
-                text-decoration: none;
-
-                   
-                }
-                a:before {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    height: 2px;
-                    width: 0;
-                    transition: width 0s ease, background .5s ease;
-                }
-                a:after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    right: 0;
-                    bottom: 0;
-                    height: 2px;
-                    width: 0;
-                    background: $mainBlueColor;
-                    transition: width .5s ease;
-                }
-                a:hover:before {
-                    width: 100%;
-                    background: $mainBlueColor;
-                    transition: width .5s ease;
-                }
-                a:hover:after {
-                    width: 100%;
-                    background: transparent;
-                    transition: all 0s ease;
-                }
-			
+	      display: inline-block;
+	      position: relative;
+	      text-decoration: none;         
+      }
+      a:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        transition: width 0s ease, background .5s ease;
+      }
+      a:after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        background: $mainBlueColor;
+        transition: width .5s ease;
+      }
+      a:hover:before {
+        width: 100%;
+        background: $mainBlueColor;
+        transition: width .5s ease;
+      }
+      a:hover:after {
+        width: 100%;
+        background: transparent;
+        transition: all 0s ease;
+      }			
 		}
 		.date {
 			color: #989b9c;
@@ -111,14 +108,15 @@
 		}
 		.arrow-prev, .arrow-next {
 			float: right;
-			color: #fff;
-			background-color: #0072b0;
+			color: #0072b0;
+			background-color: #fff;
 			padding: 10px 20px;
 			margin-right: 3px;	
 			margin-top: 10px;
 			cursor: pointer;
 			&:hover {
-				background-color: darken(#0072b0, 10%);
+				background-color: #0072b0;
+				color: #fff;
 			}
 		}
 		h5 a {
