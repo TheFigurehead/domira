@@ -94,7 +94,7 @@ $(document).ready(function() {
                 $('header').addClass('is-hidden');
         }, 2000);
     }
-    
+
 
 	function autoHideHeader() {
 		var currentTop = $(window).scrollTop();
@@ -121,7 +121,7 @@ $(document).ready(function() {
                     $('header').addClass('is-hidden');
             }, 2000);
         }
-        
+
 		var scrollTop = $(this).scrollTop();
 
 		if( !scrolling ) {
@@ -323,8 +323,8 @@ $(document).ready(function() {
             item.lng = +slides[i].dataset.lng;
             if (item)
                 markersForTopMap.push(item);
-        }        
-        
+        }
+
         markersForTopMap.forEach(function(item, i) {
             var image = {
                 url: slides[i].dataset.icon,
@@ -335,36 +335,36 @@ $(document).ready(function() {
                 // The anchor for this image is the base of the flagpole at (0, 32).
                 anchor: new google.maps.Point(0, 32)
             };
-            
+
             var markerData = {};
             markerData.position = item;
-            markerData.map = map2;            
+            markerData.map = map2;
             markerData.icon = image;
             //console.log(markerData);
             var marker = new google.maps.Marker(markerData);
-            
+
 //            google.maps.event.addListener(marker, 'mouseover', function() {
 //                console.log('Mouseover'+marker+" "+i);
 //                image.scaledSize = new google.maps.Size(250, 250)
 //                marker.setIcon(image);
 //                //this.setScaledSize(250,250);
-//    
+//
 //                console.log(this.icon.scaledSize);
 //            });
 //            google.maps.event.addListener(marker, 'mouseout', function() {
 //                console.log('Mouseout'+marker+" "+i);
-//                
+//
 //                image.scaledSize = new google.maps.Size(50, 50)
 //                marker.setIcon(image);
-//                
+//
 //                console.log(this.icon.scaledSize);
 //            });
-            
-          
+
+
 
             map2.addListener('zoom_changed', function() {
                 var zoomLvl = map2.getZoom();
-                
+
                 if(zoomLvl >= 17){
                     console.log("ZAZ");
                     image.scaledSize = new google.maps.Size(250, 250)
@@ -373,16 +373,16 @@ $(document).ready(function() {
                 else if(zoomLvl < 17){
                     image.scaledSize = new google.maps.Size(50, 50)
                     marker.setIcon(image);
-                } 
+                }
             });
-            
+
         });
-        
-        
+
+
         //console.log(map.getZoom());
-        
-        
-        
+
+
+
         slides.on('click', function() {
             var center = markersForTopMap[slides.index(this)];
             map2.setOptions({
@@ -459,7 +459,7 @@ function initMap() {
         position: {lat: 50.511042, lng: 30.225907},
         map: map,
         icon: {
-            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Главный офис син.png',
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/domira-map-markers/Главный офис син.png',
             size: new google.maps.Size(206, 53),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 53),
@@ -471,7 +471,7 @@ function initMap() {
         position: {lat: 50.381233, lng: 30.792130},
         map: map,
         icon: {
-            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Контакты ЖК 7’Я.png',
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/domira-map-markers/Контакты ЖК 7’Я.png',
             size: new google.maps.Size(131, 53),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 53),
@@ -483,7 +483,7 @@ function initMap() {
         position: {lat: 50.513212, lng: 30.226813},
         map: map,
         icon: {
-            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Контакты ЖК Мюнхаузен.png',
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/domira-map-markers/Контакты ЖК Мюнхаузен.png',
             size: new google.maps.Size(212, 53),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 106),
@@ -495,7 +495,7 @@ function initMap() {
         position: {lat: 50.511042, lng: 30.225907},
         map: map,
         icon: {
-            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Контакты Домик на Пушкинской.png',
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/domira-map-markers/Контакты Домик на Пушкинской.png',
             size: new google.maps.Size(285, 53),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(286, 53),
@@ -530,16 +530,16 @@ function initMap() {
 
     innerBlock.empty();
 
-    for (var i = 0; i < item.content.length; i++) 
+    for (var i = 0; i < item.content.length; i++)
         for (var key in item.content[i]) {
             if (key == 'name') innerBlock.append($('<h3>' + item.content[i][key] + ':</h3>'));
-            else if (key == 'number') 
+            else if (key == 'number')
                 for (var j = 0; j < item.content[i][key].length; j++)
                     innerBlock.append($('<div class="main-bottom-map-info-block-content-number"><span>' + item.content[i][key][j] + '</span></div>'));
-            else if (key == 'mail') 
+            else if (key == 'mail')
                 for (var j = 0; j < item.content[i][key].length; j++)
                     innerBlock.append($('<div class="main-bottom-map-info-block-content-email"><span>' + item.content[i][key][j] + '</span></div>'));
-            else if (key == 'text') 
+            else if (key == 'text')
                 for (var j = 0; j < item.content[i][key].length; j++)
                     innerBlock.append(item.content[i][key][j] + '<br />');
         }
