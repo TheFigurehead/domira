@@ -12,16 +12,28 @@
   src: url("../fonts/ClearSans-Regular/ClearSans-Regular.eot") format("embedded-opentype"), url("../fonts/ClearSans-Regular/ClearSans-Regular.woff") format("woff"), url("../fonts/ClearSans-Regular/ClearSans-Regular.ttf") format("truetype");
 }
 
+// globals variable
+$mainBlueColor: #0080c6;
+
 * {
 	box-sizing: border-box; }
 
 body {
-	margin: 0; 
-  background-color: #f2f7f8; 
-  padding-top: 111px; 
+	margin: 0;
+  background-color: #f2f7f8;
+  padding-top: 91px;
   font-family: "ClearSans-Regular", sans-serif;
   font-size: 14px;
   position: relative;
+  display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+}
+
+@media (max-width: 996px) {
+  body {
+    padding-top: 87px;
+  }
 }
 
 main {
@@ -56,3 +68,7 @@ main {
 @import "homeDomira";
 @import "apartmentDomira";
 @import "popup";
+@import "map";
+@import "top-main";
+@import "newsAndSales";
+@import "location";

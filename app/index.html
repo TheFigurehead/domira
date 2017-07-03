@@ -3,10 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/libs.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<header>
+	 <header>
 		<a href="#"><img src="img/logo.png" alt="Domira_logo"></a>
 		<ul>
 			<li><a href="#">Главная</a></li>
@@ -14,25 +16,131 @@
 			<li><a href="#">Новости</a></li>
 			<li><a href="#">Добрые дела</a></li>
 			<li class="drop"><a href="#">Domira Club</a>
-			<ul class="hidden">
-				<li><a href="#">Lorem</a></li>
-				<li><a href="#">Lorem</a></li>
-				<li><a href="#">Lorem</a></li>
-			</ul>
+				<ul class="hidden">
+					<li><a href="#">Lorem</a></li>
+					<li><a href="#">Lorem</a></li>
+					<li><a href="#">Lorem</a></li>
+				</ul>
 			</li>
 			<li><a href="#">Работа</a></li>
 			<li><a href="#">Контакты</a></li>
 			<li class="blue_item video-camera"><a href="#">Domira TV</a></li>
 			<li class="blue_item star"><a href="#">Избранное</a></li>
 		</ul>
+
+		<div class="burger-mobile">
+			<div class="lines"></div>
+		</div>
 	</header>
+
+
 	<main id="main">
-		<div class="wrapper">
-			<div class="container">
-				<div class="layout">
-					<div class="page-title">
-						<h3>топ 5 планировок</h3>
+	<div class="top-main-block">
+		<div class="banner-container">
+			<div class="banner-container-half">
+				<div class="main-map-top-wrapper">
+					<div class="main-map-top-block" id="main-top-map"></div>
+				</div>
+			</div>
+			<div class="banner-container-half">
+				<div class="jk-list">
+					<div class="jk-list-track">
+						<div class="jk-list-item" data-lat="50.378573" data-lng="30.786730" data-icon="/img/domira-map-markers/third150.png">
+							<div class="jk-list-item-content">
+								<div class="jk-list-item-title">
+									<h2>ЖК«7'Я» в Счастливом</h2>
+									<div class="jk-list-item-title-flag">Восток</div>
+								</div>
+								<div class="jk-list-item-text">
+									Квартира в пригороде это идеальное место, где можно отдохнуть от городской суеты и востановить силы.
+									<br>
+									<a href="#">Перейти</a>
+								</div>
+							</div>
+							<img src="img/jk1.jpg" alt="Жилой комплекс">
+						</div>
+
+						<div class="jk-list-item" data-lat="50.411994" data-lng="30.436709" data-icon="/img/domira-map-markers/first150.png">
+							<div class="jk-list-item-content">
+								<div class="jk-list-item-title">
+									<h2>ЖК«7'Я» в Счастливом</h2>
+									<div class="jk-list-item-title-flag">Запад</div>
+								</div>
+								<div class="jk-list-item-text">
+									Квартира в пригороде это идеальное место, где можно отдохнуть от городской суеты и востановить силы.
+									<br>
+									<a href="#">Перейти</a>
+								</div>
+							</div>
+							<img src="img/jk2.jpg" alt="Жилой комплекс">
+						</div>
+
+						<div class="jk-list-item" data-lat="50.439172" data-lng="30.460447" data-icon="/img/domira-map-markers/sec150.png">
+							<div class="jk-list-item-content">
+								<div class="jk-list-item-title">
+									<div class="jk-list-item-title-flag">Восток</div>
+									<h2>ЖК«7'Я» в Счастливом</h2>
+								</div>
+								<div class="jk-list-item-text">
+									Квартира в пригороде это идеальное место, где можно отдохнуть от городской суеты и востановить силы.
+									<br>
+									<a href="#">Перейти</a>
+								</div>
+							</div>
+							<img src="img/jk3.jpg" alt="Жилой комплекс">
+						</div>
+
+						<div class="jk-list-item" data-lat="50.378573" data-lng="30.786730" data-icon="img/domira-map-markers/first150.png">
+							<div class="jk-list-item-content">
+								<div class="jk-list-item-title">
+									<h2>ЖК«7'Я» в Счастливом</h2>
+									<div class="jk-list-item-title-flag">Восток</div>
+								</div>
+								<div class="jk-list-item-text">
+									Квартира в пригороде это идеальное место, где можно отдохнуть от городской суеты и востановить силы.
+									<br>
+									<a href="#">Перейти</a>
+								</div>
+							</div>
+							<img src="img/jk1.jpg" alt="Жилой комплекс">
+						</div>
+
+						<div class="jk-list-item" data-lat="50.411994" data-lng="30.436709" data-icon="img/domira-map-markers/third150.png">
+							<div class="jk-list-item-content">
+								<div class="jk-list-item-title">
+									<h2>ЖК«7'Я» в Счастливом</h2>
+									<div class="jk-list-item-title-flag">Запад</div>
+								</div>
+								<div class="jk-list-item-text">
+									Квартира в пригороде это идеальное место, где можно отдохнуть от городской суеты и востановить силы.
+									<br>
+									<a href="#">Перейти</a>
+								</div>
+							</div>
+							<img src="img/jk2.jpg" alt="Жилой комплекс">
+						</div>
+
+						<div class="jk-list-item" data-lat="50.439172" data-lng="30.460447" data-icon="img/domira-map-markers/sec150.png">
+							<div class="jk-list-item-content">
+								<div class="jk-list-item-title">
+									<div class="jk-list-item-title-flag">Восток</div>
+									<h2>ЖК«7'Я» в Счастливом</h2>
+								</div>
+								<div class="jk-list-item-text">
+									Квартира в пригороде это идеальное место, где можно отдохнуть от городской суеты и востановить силы.
+									<br>
+									<a href="#">Перейти</a>
+								</div>
+							</div>
+							<img src="img/jk3.jpg" alt="Жилой комплекс">
+						</div>
 					</div>
+
+					<div class="jk-list-nav">
+						<div class="jk-list-nav-item up"><div>∧</div></div>
+						<div class="jk-list-nav-item down"><div>∨</div></div>
+					</div>
+<<<<<<< HEAD
 					<ul class="planing-title">
 						<li class="active_li"><a href="#" >1 комнатная квартира</a></li>
 						<li><a href="#">2-х комнатная</a></li>
@@ -54,15 +162,199 @@
 						</a>
 					</div>
 					<a href="#" class="button">Подробнее</a>
+=======
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="news-and-sales">
+		<div class="container">
+			<div class="col-50 news">
+				<h3>Наши новости</h3>
+				<a href="#all-news" class="all-news">Все новости</a>
+				<table>
+					<tr class="news-item">
+						<td class="image">
+							<img src="img/G64A7458.JPG" alt="">
+						</td>
+						<td class="content">
+							<a href="#">В с.Счастливое открылся крупнейший в Киевской области супермаркет «Фора» площадью 687 кв.м.</a>
+							<div class="date">28 марта 2017</div>
+						</td>
+					</tr>
+
+					<tr class="news-item">
+						<td class="image">
+							<img src="img/news-img.png" alt="">
+						</td>
+						<td class="content">
+							<a href="#">В с.Счастливое открылся крупнейший в Киевской области супермаркет «Фора» площадью 687 кв.м.</a>
+							<div class="date">28 марта 2017</div>
+						</td>
+					</tr>
+
+					<tr class="news-item">
+						<td class="image">
+							<img src="img/news-img.png" alt="">
+						</td>
+						<td class="content">
+							<a href="#">В с.Счастливое открылся крупнейший в Киевской области супермаркет «Фора» площадью 687 кв.м.</a>
+							<div class="date">28 марта 2017</div>
+						</td>
+					</tr>
+
+					<tr class="news-item">
+						<td class="image">
+							<img src="img/news-img.png" alt="">
+						</td>
+						<td class="content">
+							<a href="#">В с.Счастливое открылся крупнейший в Киевской области супермаркет «Фора» площадью 687 кв.м.</a>
+							<div class="date">28 марта 2017</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="col-50 sales">
+				<h3>Акции</h3>
+				<span class="arrow-next">></span>
+				<span class="arrow-prev"><</span>
+
+				<div class="slider">
+					<div class="slide">
+						<div class="sales-item">
+							<img src="img/sales-img.png" alt="">
+							<h5><a href="">3 Очередь - Скидки на Квартиры до 95 000 грн.</a></h5>
+							<p>Подробности уточняйте в отделе продаж комплекса (067) 411-11-99 </p>
+						</div>
+
+						<div class="sales-item">
+							<img src="img/sales-img.png" alt="">
+							<h5><a href="">3 Очередь - Скидки на Квартиры до 95 000 грн.</a></h5>
+							<p>Подробности уточняйте в отделе продаж комплекса (067) 411-11-99 </p>
+						</div>
+					</div>
+
+					<div class="slide">
+						<div class="sales-item">
+							<img src="img/sales-img.png" alt="">
+							<h5><a href="">3 Очередь - Скидки на Квартиры до 95 000 грн.</a></h5>
+							<p>Подробности уточняйте в отделе продаж комплекса (067) 411-11-99 </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="wrapper top5-planing">
+		<div class="container">
+			<div class="layout">
+				<div class="page-title">
+					<h3>топ 5 планировок</h3>
+				</div>
+				<ul class="planing-title">
+					<li class="active_li"><a href="#" >1 комнатная квартира</a></li>
+					<li><a href="#">2-х комнатная</a></li>
+					<li><a href="#">3-х комнатная</a></li>
+					<li><a href="#">Двухуровневая квартира</a></li>
+				</ul>
+				<div class="planing-content">
+					<a href="#1" class="layout_img">
+						<img src="img/2-54-70.png" alt="">
+					</a>
+					<a href="#2" class="layout_img">
+						<img src="img/plan24.png" alt="">
+					</a>
+					<a href="#3" class="layout_img">
+						<img src="img/2-54-70.png" alt="">
+					</a>
+					<a href="#4" class="layout_img">
+						<img src="img/plan24.png" alt="">
+					</a>
+>>>>>>> master
+				</div>
+				<a href="#" class="button">Подробнее</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="image-block">
+		<div class="background-pic" style="background-image: url(img/G64A7458.JPG);"></div>
+		<div class="image-block__text">
+			<div class="content-wrapper">
+				<h2>Имиджевый блок</h2>
+				<p>никальный архитектурный стиль, функциональные планировочные решения квартир, закрытая внутренняя территория комплекса, озеленения преддомовой территории, детская и спортивная площадка, места для парковки автомобилей.</p>
+				<p>Напротив ЖК «7Я» находится садик; в 5 минутах от комплекса – школа. В Счастливом есть все для семейного счастья! Уникальный архитектурный стиль, функциональные планировочные решения квартир, закрытая внутренняя территория комплекса, озеленения преддомовой территории, детская и спортивная площадка, места для парковки автомобилей.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="main-bottom-map-wrapper">
+		<div class="main-bottom-map-info-block">
+			<div class="main-bottom-map-info-block-title">
+				<h2>Контакты</h2>
+			</div>
+			<div class="main-bottom-map-info-block-content">
+				<h3>По общим вопросам:</h3>
+				<div class="main-bottom-map-info-block-content-email"><span>info@domira.com.ua</span></div>
+				<h3>Отдел снабжения:</h3>
+				<div class="main-bottom-map-info-block-content-number"><span>+380 (096) 191-52-51</span></div>
+				<div class="main-bottom-map-info-block-content-email"><span>sergeykoval2017@ukr.net</span></div>
+				<h3>Работа в компании:</h3>
+				<div class="main-bottom-map-info-block-content-email"><span>hr@domira.com.ua</span></div>
+			</div>
+			<div class="main-bottom-map-social-block">
+				<ul>
+					<li>
+						<a href="#"><img src="img/social/fb.png" alt="facebook"></a>
+					</li>
+					<li>
+						<a href="#"><img src="img/social/inst.png" alt="instagram"></a>
+					</li>
+					<li>
+						<a href="#"><img src="img/social/in.png" alt="linkedin"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="main-bottom-map" id="bottom_map"
+		data-main-ofice='[{
+				"name": "По общим вопросам",
+				"mail": ["info@domira.com.ua"]
+			},
+			{
+				"name": "Отдел снабжения",
+				"number": ["+380 (096) 191-52-51"],
+				"mail": ["sergeykoval2017@ukr.net"]
+			},
+			{
+				"name": "Работа в компании",
+				"mail": ["hr@domira.com.ua"]
+			}
+		]'
+		data-jk7ya='[{
+				"name": "Консультация",
+				"number": ["+38 (067) 411-11-99"],
+				"text": ["по телефону (ежедневно) с 9:00 до 21:00", "в офисе (ежедневно) с 9:00 до 19:00"]
+			}
+		]'
+		data-jkmun='[{
+			"name": "Консультация",
+			"number": ["+38 (067) 411-11-00"],
+			"text": ["по телефону (ежедневно) с 9:00 до 21:00", "в офисе (ежедневно) с 9:00 до 19:00"]
+		}]'
+		data-jkdom='[{
+			"name": "Консультация",
+			"number": ["+38 (067) 411-11-00"],
+			"text": ["по телефону (ежедневно) с 9:00 до 21:00", "в офисе (ежедневно) с 9:00 до 19:00"]
+		}]'></div>
+	</div>
 	</main>
-	<script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>
-	<script src="js/main.js"></script>
+
 	<script src="js/libs.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkZtj_NS59hdszi8CYfKp6lYmQnaTMYAI"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>

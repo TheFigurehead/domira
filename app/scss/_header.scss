@@ -13,7 +13,7 @@ header {
 }
 
 .is-hidden {
-	top: -111px;
+	top: -115px;
 	transition: all .4s;
 }
 
@@ -28,6 +28,7 @@ header {
 }
 
 header img {
+	width: 120px;
 	margin: 17px 25px;
 }
 
@@ -36,7 +37,6 @@ header ul {
 	display: flex;
 	justify-content: space-around;
 	width: 75%;
-	min-width: 977px;
 	align-items: center;
 }
 
@@ -94,14 +94,15 @@ header .star a:before {
 
 header .hidden {
 	margin: 0;
-	opacity: 0;
 	position: absolute;
 	background-color: rgba(255, 255, 255, 0.9);
 	min-width: 100%;
 	transition: all .2s;
-	padding: 10px 0;
+	width: auto;
+	padding: 10px;
 	flex-direction: column;
 	align-items: flex-start;
+	display: none;
 }
 
 header .hidden li {
@@ -112,10 +113,165 @@ header .hidden li {
 }
 
 header .drop:hover .hidden {
-	opacity: 1;
-	transition: all .2s;
+	display: block;
+	animation: drop .5s;
 }
 
-.mark {
-	color: #0080c6;
+@keyframes drop {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.burger-mobile {
+	display: none;
+	background-color: $mainBlueColor;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 10px;
+	text-align: center;
+	font-size: 0;
+	.lines {
+		display: inline-block;
+		vertical-align: middle;
+		width: 70%;
+		height: 5px;
+		background-color: #fff;
+		transition: all .3s;
+		&:after, &:before {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-color: #fff;
+			position: relative;
+			transition: all .5s;
+		}
+		&:before {
+			bottom: 10px;
+		}
+		&:after {
+			top: 5px;
+		}
+	}
+	&:after {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		width: 0;
+		vertical-align: middle;
+	}
+	&.open {
+		.lines {
+			background-color: transparent;
+			&:before {
+				bottom: 0px;
+				transform: rotate(-45deg);
+			}
+			&:after {
+				top: -5px;
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+@media (max-width: 1300px) {
+	header li a {
+		font-size: 11px;
+	}
+}
+
+@media (max-width: 996px) {
+	.burger-mobile {
+		display: block;
+	}
+	header {
+		justify-content: flex-end;
+		img {
+			margin: 15px;
+		}
+	}
+	header ul:not(.hidden) {
+		display: block;
+		max-width: 50px;
+		max-height: 50px;
+		background-color: $mainBlueColor;
+		position: absolute;
+		top: calc(50% - 25px);
+		left: 10px;
+		margin: 0;
+		transition: top .2s .3s linear, max-height .3s linear, max-width .3s linear, border-radius .3s linear;
+		padding: 10px;
+		overflow: hidden;
+		a {
+			color: #fff;
+			transition: opacity .3s;
+			font-size: 15px;
+			line-height: 15px;
+			opacity: 0;
+		}
+		li {
+			padding-top: 5px;
+		}
+		.drop {
+			&:after {
+				content: none;				
+			}
+			.hidden {
+				&:before, &:after {
+					content: '';
+					display: block;
+					width: 100%;
+					height: 1px;
+					position: static;
+					background-color: darken($mainBlueColor, 5%);
+					position: relative;
+					right: 20px;
+				}
+				padding: 5px 0;
+				padding-left: 20px;
+				animation: none;
+				position: static;
+				display: block;
+				background-color: transparent;
+				li {
+					margin: 0;
+					padding-top: 5px;
+					padding-left: 0;
+					&:last-of-type {
+						padding-bottom: 5px;
+					}
+					a {
+						transition: opacity .3s;
+						line-height: 15px;
+						opacity: 0;
+					}
+				}
+			}
+		}
+		&.active {
+			transition: top .2s linear, max-height .3s linear .2s, max-width .3s linear .2s, border-radius .3s linear .2s;
+			top: calc(50% + 25px);
+			max-height: 90vh;
+			max-width: 150px;
+			border-radius: 20px;
+			border-top-left-radius: 0px;
+			a {
+				transition: opacity .3s .5s;
+				opacity: 1;
+			}
+			.drop .hidden li a {
+				transition: opacity .3s .5s;
+				opacity: 1;
+			}
+		}
+	}
 }

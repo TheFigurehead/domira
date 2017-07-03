@@ -1,0 +1,42 @@
+#location {
+	.canvas {
+		position: relative;
+		margin-top: 70px;
+		.canvas-img { width: 100%; }
+	}
+	#jk {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.no-paddings {
+		padding: 0;
+	}
+	.stages{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		align-content: center;
+		align-items: center;
+		li {
+			width: 100%;
+			margin: 5px 0;
+		}
+	}
+	.stage {
+		display: inline-block;
+		padding: 23px 20px;
+		border-radius: 50%;
+		line-height: 0;
+		color: $mainBlueColor;
+		background-color: #fff;
+		font-family: "ClearSans-Bold";
+		cursor: pointer;
+	}
+	.row-eq-height {
+		display: flex;
+	}
+}

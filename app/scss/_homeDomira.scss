@@ -3,6 +3,11 @@ main .wrapper .container .layout .button {
 	background-color: #0080c6;
 	color: #fff;
 	margin: 0 auto;
+
+    &:hover{
+        background-color: rgb(109, 182, 220);
+	    color: #fff;
+    }
 }
 
 main .wrapper .container .layout ul {
@@ -55,10 +60,10 @@ main .wrapper .container .layout .active_li a, {
 }
 
 main .wrapper .container .layout ul li::after {
-  content: ''; 
+  content: '';
   position: absolute;
-  border: 10px solid transparent;	
-  border-left: 10px solid #fff; 
+  border: 10px solid transparent;
+  border-left: 10px solid #fff;
   border-top: 10px solid #fff;
   bottom: -20px;
   left: 30px;
@@ -82,7 +87,7 @@ main .wrapper .container .layout .page-title h3 {
 }
 
 .wrapper .container .layout .page-title::before {
-	content: ''; 
+	content: '';
 	display: block;
 	width: 90px;
 	height: 2px;
@@ -94,7 +99,7 @@ main .wrapper .container .layout .page-title h3 {
 }
 
 .wrapper .container .layout .page-title::after {
-	content: ''; 
+	content: '';
 	display: block;
 	width: 90px;
 	height: 2px;
@@ -103,4 +108,95 @@ main .wrapper .container .layout .page-title h3 {
 	right: 0;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+.top5-planing {
+	min-height: 100vh;
+}
+
+.image-block {
+	min-height: 100vh;
+	display: flex;
+	.background-pic {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+		width: 45%;
+	}
+	&__text {
+		width: 55%;
+		position: relative;
+		background-color: #3b3f4d;
+		color: #fff;
+		background-image: url('../img/background-image-block.png');
+		background-repeat: no-repeat;
+		background-position: -150px -150px;
+		.content-wrapper {
+			position: absolute;
+			top: 50%;
+			left: 10%;
+			transform: translateY(-50%);
+			width: 60%;
+			font-size: 15px;
+			h2 {
+				text-transform: uppercase;
+				font-family: "ClearSans-Bold";
+				font-size: 40px;
+			}
+		}
+	}
+}
+
+@media (any-hover: hover) {
+	main .wrapper .container .layout ul li:hover a,
+	main .wrapper .container .layout ul li:active a {
+		color: #323438;
+		font-size: 18px;
+		font-weight: 700;
+		text-transform: uppercase;
+		border-bottom: none;
+		transition: all 0.2s;
+	}
+
+	main .wrapper .container .layout li:hover::after {
+		display: block;
+	}
+}
+
+@media (max-width: 768px) {
+	main .wrapper .container .layout .layout_img {
+		img {
+			width: 100%;
+		}
+	}
+
+	.image-block {
+		flex-wrap: wrap;
+		.background-pic {
+			width: 100%;
+			min-height: 500px;
+		}
+		&__text {
+			width: 100%;
+			.content-wrapper {
+				position: static;
+				transform: none;
+				width: 90%;
+				margin: 30px auto;
+			}
+		}
+	}
+}
+
+@media (max-width: 520px) {
+	main .wrapper .container .layout .page-title {
+		padding: 0;
+		&:after, &:before {
+			content: none;
+		}
+	}
+
+	.image-block .background-pic {
+		min-height: 300px;
+	}
 }
