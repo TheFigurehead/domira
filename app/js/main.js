@@ -460,11 +460,11 @@ function initMap() {
         map: map,
         icon: {
             // url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Главный офис син.png',
-            url: 'img/domira-map-markers/Главный офис син.png',
+            url: '../img/domira-map-markers/Главный офис.png',
             size: new google.maps.Size(206, 53),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(0, 53),
-            scaledSize: new google.maps.Size(206, 53)
+            anchor: new google.maps.Point(0, 35),
+            scaledSize: new google.maps.Size(137, 35)
         },
         content: JSON.parse(bottomMap.dataset.mainOfice)
     },
@@ -472,11 +472,12 @@ function initMap() {
         position: {lat: 50.381233, lng: 30.792130},
         map: map,
         icon: {
-            url: 'img/domira-map-markers/Контакты ЖК 7’Я.png',
+            // url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Контакты ЖК 7’Я.png',
+            url: '../img/domira-map-markers/Контакты ЖК 7’Я.png',
             size: new google.maps.Size(131, 53),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(0, 53),
-            scaledSize: new google.maps.Size(131, 53)
+            anchor: new google.maps.Point(0, 35),
+            scaledSize: new google.maps.Size(87, 35)
         },
         content: JSON.parse(bottomMap.dataset.jk7ya)
     },
@@ -484,11 +485,12 @@ function initMap() {
         position: {lat: 50.513212, lng: 30.226813},
         map: map,
         icon: {
-            url: 'img/domira-map-markers/Контакты ЖК Мюнхаузен.png',
+            // url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Контакты ЖК Мюнхаузен.png',
+            url: '../img/domira-map-markers/Контакты ЖК Мюнхаузен.png',
             size: new google.maps.Size(212, 53),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(0, 106),
-            scaledSize: new google.maps.Size(212, 53)
+            anchor: new google.maps.Point(0, 70),
+            scaledSize: new google.maps.Size(141, 35)
         },
         content: JSON.parse(bottomMap.dataset.jkmun)
     },
@@ -496,11 +498,12 @@ function initMap() {
         position: {lat: 50.511042, lng: 30.225907},
         map: map,
         icon: {
-            url: 'img/domira-map-markers/Контакты Домик на Пушкинской.png',
+            // url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Контакты Домик на Пушкинской.png',
+            url: '../img/domira-map-markers/Контакты Домик на Пушкинской.png',
             size: new google.maps.Size(285, 53),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(286, 53),
-            scaledSize: new google.maps.Size(285, 53)
+            anchor: new google.maps.Point(191, 35),
+            scaledSize: new google.maps.Size(190, 35)
         },
         content: JSON.parse(bottomMap.dataset.jkdom)
     }
