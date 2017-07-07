@@ -326,15 +326,25 @@ $(document).ready(function() {
         }        
         
         markersForTopMap.forEach(function(item, i) {
-            var image = {
-                url: slides[i].dataset.icon,
-                // This marker is 20 pixels wide by 32 pixels high.
-                scaledSize: new google.maps.Size(50, 50),
-                // The origin for this image is (0, 0).
-                origin: new google.maps.Point(0, 0),
-                // The anchor for this image is the base of the flagpole at (0, 32).
-                anchor: new google.maps.Point(0, 32)
-            };
+
+            if (i != 1) var image = {
+                    url: slides[i].dataset.icon,
+                    // This marker is 20 pixels wide by 32 pixels high.
+                    scaledSize: new google.maps.Size(50, 50),
+                    // The origin for this image is (0, 0).
+                    origin: new google.maps.Point(0, 0),
+                    // The anchor for this image is the base of the flagpole at (0, 32).
+                    anchor: new google.maps.Point(0, 32)
+                };
+            else  var image = {
+                    url: slides[i].dataset.icon,
+                    // This marker is 20 pixels wide by 32 pixels high.
+                    scaledSize: new google.maps.Size(50, 50),
+                    // The origin for this image is (0, 0).
+                    origin: new google.maps.Point(0, 0),
+                    // The anchor for this image is the base of the flagpole at (0, 32).
+                    anchor: new google.maps.Point(-25, 70)
+                };
             
             var markerData = {};
             markerData.position = item;
@@ -448,8 +458,8 @@ function initMap() {
 
   if(document.getElementById('main-top-map')){
   map2 = new google.maps.Map(document.getElementById('main-top-map'), {
-    center: {lat: 50.3391000, lng: 30.640447},
-    zoom: 11,
+    center: {lat: 50.3391000, lng: 30.540447},
+    zoom: 10,
     //disableDefaultUI: true,
     scrollwheel: false
   });}
