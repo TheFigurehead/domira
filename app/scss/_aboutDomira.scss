@@ -25,13 +25,17 @@
 }
 
 .page_text .container .main_content_text .text_content:first-child .page-title h2 {
-	margin-bottom: 70px;
+  margin-bottom: 13px;
 	font-size: 40px;
 }
 
 .page_text .container .main_content_text .text_content:last-child .page_text_content {
 	border-bottom: none;
 	margin-bottom: 0;
+}
+
+.page_text iframe {
+	width: 100%;
 }
 
 @media screen and (max-width: 996px){

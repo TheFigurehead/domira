@@ -105,6 +105,10 @@
 	.sales {
 		h3 {
 			color: #fff;
+	    margin-bottom: 20px;
+		}
+		hr {
+			margin-bottom: 50px;
 		}
 		.arrow-prev, .arrow-next {
 			float: right;
@@ -127,7 +131,7 @@
 			text-decoration: none;
 		}
 		.sales-item {
-			margin-top: 30px;
+			margin-bottom: 30px;
 			img { width: 100%; }
 			p {
 				color: #c0deee;

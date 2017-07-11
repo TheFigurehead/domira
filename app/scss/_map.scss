@@ -5,6 +5,7 @@
     min-height: 100vh;
   }
   .main-bottom-map-info-block{
+    width: 400px;
     border-radius: 2px;
     background-color: rgba(0, 128, 198, 0.95);
     padding: 45px 175px 45px 45px;
@@ -123,6 +124,7 @@
 
 @media (max-width: 768px) {
   .main-bottom-map-wrapper .main-bottom-map-info-block {
+    width: auto;
     top: 0;
     right: 0;
     transform: none;
@@ -131,6 +133,7 @@
 
 @media (max-width: 520px) {
   .main-bottom-map-wrapper .main-bottom-map-info-block {
+    width: auto;
     position: relative;
     padding: 20px;
   }

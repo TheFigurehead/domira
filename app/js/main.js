@@ -269,7 +269,7 @@ $(document).ready(function() {
 
     // main page
     var mainPage = document.getElementById('main');
-    if (mainPage) {
+    if (mainPage || document.getElementsByClassName('page_text')[0]) {
         /********************/
         //top main slider
         /*******************/
@@ -334,7 +334,7 @@ $(document).ready(function() {
                     // The origin for this image is (0, 0).
                     origin: new google.maps.Point(0, 0),
                     // The anchor for this image is the base of the flagpole at (0, 32).
-                    anchor: new google.maps.Point(0, 32)
+                    anchor: new google.maps.Point(0, 0)
                 };
             else  var image = {
                     url: slides[i].dataset.icon,
@@ -350,7 +350,7 @@ $(document).ready(function() {
             markerData.position = item;
             markerData.map = map2;            
             markerData.icon = image;
-            //console.log(markerData);
+
             var marker = new google.maps.Marker(markerData);
             
 //            google.maps.event.addListener(marker, 'mouseover', function() {
@@ -372,34 +372,47 @@ $(document).ready(function() {
             
           
 
-            map2.addListener('zoom_changed', function() {
-                var zoomLvl = map2.getZoom();
+            // map2.addListener('zoom_changed', function() {
+            //     var zoomLvl = map2.getZoom();
                 
-                if(zoomLvl >= 17){
-                    console.log("ZAZ");
-                    image.scaledSize = new google.maps.Size(250, 250)
-                    marker.setIcon(image);
-                }
-                else if(zoomLvl < 17){
-                    image.scaledSize = new google.maps.Size(50, 50)
-                    marker.setIcon(image);
-                } 
-            });
+            //     if(zoomLvl >= 17){
+            //         image.scaledSize = new google.maps.Size(250, 250)
+            //         marker.setIcon(image);
+            //     }
+            //     else if(zoomLvl < 17){
+            //         image.scaledSize = new google.maps.Size(50, 50)
+            //         marker.setIcon(image);
+            //     } 
+            // });
+
+            map2.addListener('center_changed', function() {
+                $('.lightning-for-marker').remove();
+                slides.removeClass('active');
+            })
+
+            var lightningForMarker = $('<div class="lightning-for-marker"></div>');        
+        
+            slides.on('click', function() {
+                var center = markersForTopMap[slides.index(this)];
+                map2.setOptions({
+                    zoom: 15,
+                    center: center,
+                })
+
+                image.anchor = new google.maps.Point(0, 0);
+                marker.setIcon(image);
+
+                slides.removeClass('active');
+                $(this).addClass('active');
+
+                lightningForMarker.appendTo($('#main-top-map'));
+            })
             
         });
         
         
         //console.log(map.getZoom());
-        
-        
-        
-        slides.on('click', function() {
-            var center = markersForTopMap[slides.index(this)];
-            map2.setOptions({
-                zoom: 15,
-                center: center,
-            })
-        })
+
         // end main page maps
 
         // sales slider
@@ -450,8 +463,8 @@ function initMap() {
     var bottomMap = document.getElementById('bottom_map')
 
   map = new google.maps.Map(bottomMap, {
-    center: {lat: 50.487818, lng: 30.507593},
-    zoom: 11,
+    center: {lat: 50.487818, lng: 30.857593},
+    zoom: 10,
     //disableDefaultUI: true,
     scrollwheel: false
   });}
@@ -470,7 +483,7 @@ function initMap() {
         map: map,
         icon: {
             // url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Главный офис син.png',
-            url: '../img/domira-map-markers/Главный офис.png',
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/domira-map-markers/Главный офис.png',
             size: new google.maps.Size(206, 53),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 35),
@@ -483,7 +496,7 @@ function initMap() {
         map: map,
         icon: {
             // url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Контакты ЖК 7’Я.png',
-            url: '../img/domira-map-markers/Контакты ЖК 7’Я.png',
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/domira-map-markers/Контакты ЖК 7’Я.png',
             size: new google.maps.Size(131, 53),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 35),
@@ -496,7 +509,7 @@ function initMap() {
         map: map,
         icon: {
             // url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Контакты ЖК Мюнхаузен.png',
-            url: '../img/domira-map-markers/Контакты ЖК Мюнхаузен.png',
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/domira-map-markers/Контакты ЖК Мюнхаузен.png',
             size: new google.maps.Size(212, 53),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 70),
@@ -509,7 +522,7 @@ function initMap() {
         map: map,
         icon: {
             // url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/Контакты Домик на Пушкинской.png',
-            url: '../img/domira-map-markers/Контакты Домик на Пушкинской.png',
+            url: 'http://domira.ststs.xyz/wp-content/themes/domira/img/domira-map-markers/Контакты Домик на Пушкинской.png',
             size: new google.maps.Size(285, 53),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(191, 35),
@@ -540,7 +553,7 @@ function initMap() {
    innerBlock = $('.main-bottom-map-info-block-content');
 
    marker.addListener('click', function() {
-    offsetCenter(map, marker.getPosition(), -$(window).width() / 4, 0);
+    // offsetCenter(map, marker.getPosition(), -$(window).width() / 4, 0);
 
     innerBlock.empty();
 
